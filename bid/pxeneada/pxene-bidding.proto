@@ -1,0 +1,147 @@
+message PBBanner{
+	// 广告宽度 单位：像素
+	optional int32 w = 1;
+	// 广告高度 单位：像素
+	optional int32 h = 2;
+	// 拒绝的广告创意类型，取值参考API文档(3.9)
+	repeated int32 mimes = 3;
+	// 拒绝的广告属性，取值参考API文档(3.10)
+	repeated int32 battr = 4;
+}
+
+message PBApp{
+	// 唯一id
+	required string id = 1;
+	// 应用名字
+	optional string name = 2;
+	// App类型，参考表格《App分类对应表v1.8.5》
+	repeated int32 cat = 3;
+	// App软件包名
+	optional string bundle = 4;
+	// App市场下载地址
+	optional string storeurl = 5;
+}
+
+message PBGeo{
+	// 纬度（-90~90），负数表示南纬。
+	optional double lat = 1;
+	// 经度（-180~180），负数表示西经。
+	optional double lon = 2;
+}
+
+message PBDevice{
+   // Android系统的imei
+   optional string did = 1;
+   // 终端网卡的 MAC地址
+   optional string mac = 2;
+   // AndroidID或IDFA或Android Advertiser ID的值
+   optional string dpid = 3;
+   // 制造商，如”Apple”
+   optional string brand = 4;
+   // 设备型号
+   optional string model = 5;
+   // 设备操作系统，参考API文档(3.11)
+   optional int32 os = 6;
+   // 设备操作系统版本号
+   optional string osv = 7;
+   // 网络连接类型，参考API文档(3.5)
+   optional int32 connectiontype = 8;
+   // 设备类型，参考API文档(3.6)
+   optional int32 devicetype = 9;
+   // 设备屏幕分辨率宽度像素数。
+   optional int32 w = 10;
+   // 设备屏幕分辨率高度像素数。
+   optional int32 h = 11;
+   // Ip地址
+   optional string ip = 12; 
+   // 用户浏览器User-Agent字符串
+   optional string ua = 13;
+}
+
+message PBUser{
+	// 用户id
+	optional string id = 1;
+	// 性别。参考gender
+	optional int32 gender = 2;
+	// 出生年份(默认-1)
+	optional int32 yob = 3;
+	// 用户标签
+	optional string keywords = 4;
+	// 用户位置信息
+	optional PBGeo geo = 5;
+	// 用户历史搜索关键字
+	optional string searchkey = 6;
+}
+
+message PBImpressionExt{
+   // 是否开屏广告。参考“splash”
+   optional int32 splash = 1;
+}
+
+message PBBid{
+   // 对应的Impression id
+   required string impid = 1;
+   // 出价,单位：分/CPM
+   optional double bid_price = 2;
+   // DSP侧的素材id
+   optional string adid = 3;
+   // DSP提供的扩展参数
+   optional string extdata = 4;
+}
+
+message PBSeatBid{
+   repeated PBBid bid = 1;
+}
+
+message PBImpression{
+   // 唯一id，由adx生成
+   required string id = 1;
+   // Banner对象，当广告位是Banner时必填。
+   optional PBBanner banner = 2;   
+   // 底价的货币种类。只支持”CNY”
+   optional string bidfloorcur = 3;   
+   // 底价。单位：0.01元/CPM
+   optional double bidfloor = 4;   
+   // 是否全插屏广告位
+   optional int32 instl = 5;   
+   // 广告位置
+   optional int32 adpos = 6;   
+   // 标识是否需要HTTPS，”1“表示必须https，默认为0
+   optional int32 secure = 7;   
+   // 标识广告位是否可点击，”1” 表示可点击，默认为0
+   optional int32 is_clickable = 8;   
+   // 支持的打开方式
+   repeated int32 ctype = 9;   
+   // 扩展数据
+   optional PBImpressionExt ext = 10;
+}
+
+// 请求
+message PBBidRequest{
+	// Bid request的唯一id，由adx生成
+	required string id = 1;
+	// Impression对象数组
+	repeated PBImpression imp = 2;
+	// App对象，描述App信息
+	optional PBApp app = 3;
+	//Device对象描述设备信息
+	optional PBDevice device = 4;
+	// User 对象，描述用户信息
+	optional PBUser user = 5;
+	// 拒绝的广告行业类型
+	repeated int32 bcat = 6;
+	// 拒绝的广告主域名
+	repeated string badv = 7;
+}
+
+// 响应
+message PBBidResponse{
+	// 响应的Bid request的唯一id
+	required string id = 1;
+	// 该seat的0或多组bids。
+	repeated PBSeatBid seatbid = 2;
+	// Bid response id，由DSP生成。（使用request id即可）
+	optional string bidid = 3;
+	// 出价货币：”CNY”
+	optional string cur = 4;
+}

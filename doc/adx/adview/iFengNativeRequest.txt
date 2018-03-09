@@ -1,0 +1,138 @@
+{
+  "id": "20160401-172255_bidreq_168-7765-ZZfc-3675",
+  "app": {
+    "id": "6231717594ac4f5eb8a688fd605cff34",
+    "paid": 0,
+    "cat": [
+      10400
+    ],
+    "name": "凤凰新闻客户端",
+    "bundle": "",
+    "ver": "1.1.3",
+    "ext": {
+      "appsecret": "",
+      "appkey": ""
+    }
+  },
+  "imp": [
+    {
+      "id": "20160401-172255_reqimp_168-7765-adct-3674",
+      "bidfloor": 73000,
+      "tagid": "nofsh6wgo63f",
+      "native": {
+        "request": {
+          "assets": [
+            {
+              "id": 1,
+              "img": {
+                "w": 168,
+                "mimes": [
+                  
+                ],
+                "hmin": 0,
+                "wmin": 0,
+                "type": 1,
+                "h": 120
+              },
+              "required": 1
+            },
+            {
+              "id": 2,
+              "title": {
+                "len": 14
+              },
+              "required": 1
+            }
+          ],
+          "layout": 6,
+          "adunit": 4
+        },
+        "ver": "1.0"
+      },
+      "instl": 6,
+      "bidfloorcur": "RMB"
+    }
+  ],
+  "at": 0,
+  "device": {
+    "orientation": 0,
+    "os": "Android",
+    "model": "",
+    "osv": "4.4.3",
+    "js": 1,
+    "sh": 1280,
+    "ip": "121.10.63.41",
+    "didsha1": "c6f54bc2346a8fe2a87f9c3b7c1822803266581e",
+    "connectiontype": 2,
+    "ua": "Mozilla\/5.0 (Linux; Android 4.4.3; MI 2 Build\/KTU84L) AppleWebKit\/537.36 (KHTML, like Gecko) Version\/4.0 Chrome\/33.0.0.0 Mobile Safari\/537.36",
+    "carrier": "",
+    "devicetype": 2,
+    "language": "zh",
+    "make": "",
+    "sw": 720
+  },
+  "user": {
+    
+  }
+}
+
+
+
+
+
+
+{
+  "bidid": "4411_1459917908843_42231",
+  "cur": "RMB",
+  "id": "20160406-124702_bidreq_179-5371-xmIm-514",
+  "seatbid": [
+    {
+      "bid": [
+        {
+          "adct": 0,
+          "adh": 120,
+          "adid": "4411",
+          "admt": 8,
+          "adtm": 0,
+          "adurl": "http://...?rqid=20160406-124702_bidreq_179-5371-xmIm-514&extdata=fGlzUE1QPTB8Yz0yOTc5NnxndWlkPW51bGx8QXByPTQ0MTF8QXNjPTQyMjMxfEFzcD02MjMxNzE3NTk0YWM0ZjVlYjhhNjg4ZmQ2MDVjZmYzNF8wXzB8aHNjb2RlPTk5ODg0OTUzN3xEb21haW49d3d3LmFkdmlldy5jbnxJcD00Mi40OC4zMC4xM3xDaGFubmVsSWQ9MTA0MA==&isJamp=1&JampUrl=http%3A%2F%2Fwww.fjqlhs.com%2Ftg%2FgpB.html%3Fzcid%3D374EF8A3B3FC5CD0C5FAA7C8A9C5D950D3CDE62051969A9D",
+          "adw": 168,
+          "cid": "29796",
+          "curl": [
+            
+          ],
+          "impid": "20160406-124702_reqimp_179-5371-u1h7-513",
+          "native": {
+            "assets": [
+              {
+                "id": 1,
+                "img": {
+                  "h": 120,
+                  "url": "http://...20160401/107539cc10c432c4dcecef59cd98981f.jpg",
+                  "w": 168
+                }
+              },
+              {
+                "id": 2,
+                "title": {
+                  "text": "测试文本！测试文本！"
+                }
+              }
+            ],
+            "ver": "1"
+          },
+          "nurl": {
+            "0": [
+              "http://...?rqid=20160406-124702_bidreq_179-5371-xmIm-514&extdata=fGlzUE1QPTB8Yz0yOTc5NnxndWlkPW51bGx8QXByPTQ0MTF8QXNjPTQyMjMxfEFzcD02MjMxNzE3NTk0YWM0ZjVlYjhhNjg4ZmQ2MDVjZmYzNF8wXzB8aHNjb2RlPTk5ODg0OTUzN3xEb21haW49d3d3LmFkdmlldy5jbnxJcD00Mi40OC4zMC4xM3xDaGFubmVsSWQ9MTA0MA==&rqp=%%WIN_PRICE%%"
+            ]
+          },
+          "paymode": 1,
+          "price": 127000,
+          "wurl": "http://.../Index.aspx?rqid=20160406-124702_bidreq_179-5371-xmIm-514&extdata=fGlzUE1QPTB8Yz0yOTc5NnxndWlkPW51bGx8QXByPTQ0MTF8QXNjPTQyMjMxfEFzcD02MjMxNzE3NTk0YWM0ZjVlYjhhNjg4ZmQ2MDVjZmYzNF8wXzB8aHNjb2RlPTk5ODg0OTUzN3xEb21haW49d3d3LmFkdmlldy5jbnxJcD00Mi40OC4zMC4xM3xDaGFubmVsSWQ9MTA0MA==&rqp=%%WIN_PRICE%%"
+        }
+      ],
+      "seat": "4411_1459917908843_42231_29796"
+    }
+  ]
+}
+
+

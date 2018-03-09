@@ -1,0 +1,154 @@
+package adx4mzsdk.apiv1;
+//本文件提供给adx,adx按照该文件实现服务接口,魅族流量方按照接口调用其服务
+//描述API接口版本:1.0.0
+//created by guanliqun@meizu.com wuhaoqing@meizu.com 
+
+//版本信息
+message Version {
+	optional uint32 major = 1[default = 0]; //必填！
+	optional uint32 minor = 2[default = 0]; //选填
+	optional uint32 micro = 3[default = 0]; //选填
+};
+
+//二维尺寸信息
+message Size {
+	optional uint32 width = 1[default = 0]; //必填,宽度
+	optional uint32 height = 2[default = 0]; //必填,高度
+};
+
+//用户标识，明文，需要按照要求填写
+message UdId {
+	optional string imei_md5 = 1;//Android IMEI 经过MD5 方式加密，格式要求[0-9A-Za-z]{32}
+	optional string zone = 2[default = ""]; //时区，例如:GTM+8
+	optional string language = 3[default = ""];//语言，比如zh_CN
+	optional string mzid = 4[default = ""]; // 魅族自家位置id
+};
+
+//GPS定位信息
+message Gps {
+	//GPS坐标类型
+	enum CoordinateType {
+		WGS84 = 1;  // 全球卫星定位系统坐标系
+		GCJ02 = 2;  // 国家测绘局坐标系
+	};
+	optional CoordinateType coordinate_type = 1;  // 必填,坐标类型
+	optional double longitude = 2;  // 必填,经度
+	optional double latitude = 3;  // 必填,纬度
+	optional uint32 timestamp = 4;  // 必填,时间戳，单位秒
+};
+
+//设备信息
+message Device {
+	//设备类型,后续支持魅族TV等都可以通过这里增加媒体类型
+	enum DeviceType {
+		PHONE = 1; //手机
+		TABLET = 2; //平板
+	};
+
+	//操作系统类型，目前我们只支持Android平台
+	enum OsType {
+		ANDROID = 1; //ANDROID
+		IOS = 2; //IOS
+	};
+
+	optional DeviceType device_type = 1; //必填，设备类型
+	optional OsType os_type = 2; //必填，操作系统类型
+	optional Version os_version = 3; //必填，操作系统版本 
+	optional bytes vendor = 4[default = ""]; //必填，设备厂商名称，中文需要UTF-8编码
+	optional UdId udid = 5; //必填，设备唯一标识，必须按照要求填写
+	optional Size screen_size = 6; //必填，设备屏幕尺寸
+};
+
+
+//网络信息
+message Network {
+	//网络连接类型
+	enum ConnectionType {
+		CONNECTION_UNKNOWN = 0; //无法获取当前网络连接类型
+		CELL_UNKNOWN = 1; //蜂窝数据接入，但无法判断网络类型
+		CELL_2G = 2; //蜂窝数据2G网络
+		CELL_3G = 3; //蜂窝数据3G网络
+		CELL_4G = 4; //蜂窝数据4G网络
+		CELL_5G = 5; //蜂窝数据5G网络
+		WIFI = 1000; //WIFI接入
+		ETHERNET = 1001; //以太网接入
+		NEW_TYPE = 9999; //未知新类型
+	};
+
+	//移动运营商类型
+	enum OperatorType {
+		UNKNOWN_OPERATOR = 0; //未知运营商
+		CHINA_MOBILE = 1; //中国移动
+		CHINA_TELECOM = 2; //中国电信
+		CHINA_UNICOM = 3; //中国联通
+		OTHER_OPERATOR = 99; //其他运营商	
+	};
+
+	optional string ipv4 = 1; //必填，设备公网的IPV4地址
+	optional ConnectionType connection_type = 2; //必填,网络类型，用于判断网络速度
+	optional OperatorType operator_type = 3; //必填，移动运营商类型
+};
+
+//meizu ad API请求
+message AdRequest {
+	optional string request_id = 1; //必填，接入方自定义请求ID，[a-zA-Z0-9]{32}
+	optional Version api_version = 2;//必填，API版本，当前版本为1.0.0
+	optional Device device_info = 3; //必填，设备信息
+	optional Network network_info = 4; //必填，网络信息
+	optional Size adslot_size = 5; //必填，广告位尺寸,返回广告大图应该尽量匹配该尺寸
+	repeated string shield_advertiser_key = 6; //屏蔽广告主id列表
+	repeated string shield_industry_key = 7; //屏蔽行业id列表
+	repeated string shield_type = 8; //屏蔽广告类型列表
+	optional Gps gps_info = 9; //选填，GPS定位信息，辅助触发LBS广告
+};
+
+
+// 广告物料元数据信息
+message MaterialMeta {
+	// 样式类型
+	enum StyleType {
+		UNKNOWN = 0; // 未知样式
+		TITLE_DESC = 1;  // 标题 + 描述，必须填充 title 和 description字段
+		ICON_TITLE_DESC = 2;  // 图标 + 标题 + 描述,必须填充 icon_src title 和 description字段
+		ONLY_IMAGE = 3;  // 大图,必须填充 image_src 字段
+		TITLE_IMAGE = 4;  // 标题 + 大图,必须填充 title 和 image_src 字段
+		TITLE_DESC_IMAGE = 5;  // 标题 + 描述 + 大图, 必须填充 title description  image_src 字段
+		TITLE_ICON_DESC_IMAGE = 6; //标题 + 图标 + 描述 + 大图, 必须填充 title icon_src description image_src 字段 
+	};
+	// 交互类型
+	enum InteractionType {
+		NO_INTERACTION = 0;  // 无动作，即广告广告点击后无需进行任何响应
+		SURFING = 1;  // 使用浏览器打开网页
+		DOWNLOAD = 2;  // 下载应用
+	};
+	optional InteractionType interaction_type = 1;  // 交互类型
+	optional string win_notice_url = 2;  // 曝光日志URL，在曝光后必须在客户端汇报
+	optional string click_url = 3;  // 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+	optional bytes title = 4;  // 推广标题，中文需要UTF-8编码
+	optional bytes description = 5;  // 广告描述，中文需要UTF-8编码
+	optional string icon_src = 6;  // 广告图标地址
+	optional string image_src = 7;  // 广告图片地址
+	optional uint32 material_width = 8;  // 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+	optional uint32 material_height = 9;  // 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+	optional StyleType style_type = 10;//样式类型
+	optional string click_notice_url = 11;  // 点击上报日志URL，若click_notice_url不为空,则需在点击后在客户端汇报
+};
+
+
+// 广告信息
+message Ad {
+	optional string ad_key = 1; // 对当前返回广告的签名，可以唯一标识广告
+	optional uint32 price = 2;  // 价格,以分为单位
+	optional string advertiser_key = 3;  // 广告商id,可以唯一标识广告商,可在屏蔽广告商时使用
+	optional string industry_key = 4; // 行业id,可以唯一标识该广告所属行业,可在屏蔽行业时使用
+	optional string type = 5; // 广告类型,比如 banner 信息流等等,可在屏蔽广告类型时使用
+	repeated MaterialMeta meta_group = 6; // 物料元数据组，在一个广告中含有多个物料元信息时使用，如拟使用多图样式，必须使用该字段
+};
+
+//meizu ad API应答
+message AdResponse {
+	optional string request_id = 1;  // 对应请求的接入方自定义请求ID
+	optional uint64 error_code = 2;  // 请求响应出错时的错误码，用于问题排查, 0 表示成功,500表示系统异常
+	repeated Ad ads = 3;  // 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+	optional uint32 expiration_time = 4;  // 广告清单过期时间戳，单位秒
+};

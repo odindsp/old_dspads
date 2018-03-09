@@ -1,0 +1,21 @@
+1 Callout successful.
+2 Internal error.
+3 Unknown status (deprecated).
+4 Unknown status.
+5 Out of quota.
+6 Dropped by selective callout.
+7 Callout HTTP request timed out.
+8 HTTP response contained no data.
+9 HTTP response could not be parsed.
+10 Unknown HTTP status code or TCP error.
+11 Bidder returned an HTTP 3xx status code.
+12 Bidder returned an HTTP 4xx status code.
+13 Bidder returned an HTTP 5xx status code.
+14 Deprecated.
+15 Bid response too large.
+16 BidResponse proto could not be parsed.
+17 DNS lookup failed.
+21 SSL certificate error.
+18 All ads in response filtered.
+19 Testing mode was enabled.
+20 No ads returned with bid response.

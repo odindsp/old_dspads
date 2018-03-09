@@ -1,0 +1,43 @@
+{
+"id": "01011508241142150001000000009405",
+"imp":[
+    {
+  "id": "1",
+  "banner": {
+    "id": "1",
+    "w": 320,
+    "h": 50,
+    "pos": "SIDEBAR"
+  },
+  "bidfloor": 0.05
+}
+    ] ,
+"app": {
+  "id": "xiaozhi",
+  "bundle": "com.inveno.xiaozhi",
+  "paid": 0,
+  "publisher": {
+    "id": "5625b0ea4d3b6a0600a83501",
+    "domain": "com.inveno.xiaozhi"
+  },
+  "keywords": "news"
+},
+"device": {
+  "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A405 Safari/600.1.4",
+  "ip": "192.168.1.1",
+  "devicetype": "MOBILE",
+  "model": "unknow",
+  "os": "android",
+  "osv": "",
+  "w": 800,
+  "h": 1024,
+  "connectiontype": "WIFI",
+  "imei": "865091026464357"
+},
+"test": 0,
+"tmax": 300,
+"at": 0,
+"scenario": {
+  "type": "APP"
+}
+}

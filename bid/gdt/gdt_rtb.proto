@@ -1,0 +1,337 @@
+// Copyright (c) 2014 Tencent Inc.
+
+package gdt.adx;
+
+message BidRequest {
+  // ADX提供的BidRequest唯一标识
+  optional string id = 1;
+
+  // true表示探测网络延迟，不触发竞价逻辑
+  // DSP设置request_id和processing_time_ms后立即返回BidResponse
+  // DSP必须支持此特性
+  optional bool is_ping = 2 [default = false];
+
+  // true表示测试请求，竞价成功的广告不会被展示和计费
+  // DSP对此类请求的处理完全同普通请求
+  // DSP必须支持此特性
+  optional bool is_test = 3 [default = false];
+
+  message Impression {
+    // BidRequest范围内，Impression唯一标识
+    optional string id = 1;
+
+    // ADX提供的广告位id
+    optional int64 placement_id = 2;
+
+    // 广告位支持的素材规格列表
+    // 取值见《广告样式说明.xlsx 》
+    repeated int32 creative_specs = 3;
+
+    // 广告位底价，CPM，单位:分
+    optional int32 bid_floor = 4;
+
+    // 广告位过滤的行业ID列表
+    // 取值见《广告主行业分类.xlsx》
+    repeated int64 blocking_industry_id = 5;
+
+    // 原生广告位信息
+    message Native {
+      // 原生广告位要素
+      enum Fields {
+        // 标题，应用名称
+        HEADLINE = 0x1;
+        // 图标，应用图标
+        ICON = 0x2;
+        // 主图
+        IMAGE = 0x4;
+        // 描述
+        DESCRIPTION = 0x8;
+      }
+
+      // 所需要的原生广告位要素，按照比特位填充
+      optional uint64 required_fields = 1;
+
+      // 原生广告类型
+      enum Type {
+        // 普链
+        LINK = 0;
+        // 应用
+        APP = 1;
+      }
+
+      optional Type type = 2;
+    }
+
+    repeated Native natives = 6;
+
+    // CPD或者合约CPM的合同号
+    repeated string contract_code = 7;
+
+    // 广告位支持的素材类型列表，比如jpeg，gif等, 为空的时候不做限制
+    repeated string multimedia_type_white_list = 8;
+
+    // 广告位过滤的关键字
+    repeated string blocking_keyword = 10;
+    // 当advertiser_whitelist非空时，adx只接受白名单广告主的广告
+    repeated string advertiser_whitelist = 11;
+    // 广告位过滤的广告主
+    repeated string advertiser_blacklist = 12;
+
+    // 命中的pretargeting配置的id
+    repeated string pretargeting_ids = 13;
+  }
+
+  repeated Impression impressions = 4;
+
+  enum DeviceType {
+    DEVICETYPE_UNKNOWN = 0;
+    DEVICETYPE_PC = 1;
+    DEVICETYPE_MOBILE = 2;
+    DEVICETYPE_PAD = 3;
+  }
+
+  enum Carrier {
+    CARRIER_UNKNOWN = 0;
+    CARRIER_CHINAMOBILE = 1;
+    CARRIER_CHINAUNICOM = 2;
+    CARRIER_CHINATELECOM = 3;
+  }
+
+  enum ConnectionType {
+    CONNECTIONTYPE_UNKNOWN = 0;
+    CONNECTIONTYPE_WIFI = 1;
+    CONNECTIONTYPE_2G = 2;
+    CONNECTIONTYPE_3G = 3;
+    CONNECTIONTYPE_4G = 4;
+  }
+
+  enum OperatingSystem {
+    OS_UNKNOWN = 0;
+    OS_IOS = 1;
+    OS_ANDROID = 2;
+    OS_WINDOWS = 3;
+    OS_SYMBIAN = 4;
+    OS_JAVA = 5;
+  }
+
+  message Device {
+    // 设备唯一标示
+    // Android用IMEI md5sum，iOS用IDFA md5sum，其他用MAC地址
+    optional string id = 1;
+
+    optional DeviceType device_type = 2;
+
+    optional OperatingSystem os = 3;
+
+    optional string os_version = 4;
+
+    optional string user_agent = 5;
+
+    // 屏幕宽度，单位:像素
+    optional int32 screen_width = 6;
+
+    // 屏幕高度，单位:像素
+    optional int32 screen_height = 7;
+
+    // 屏幕每英寸像素
+    optional int32 dpi = 8;
+
+    optional Carrier carrier = 9;
+
+    optional ConnectionType connection_type = 10;
+
+    // 设备的品牌型号
+    optional string brand_and_model = 11;
+
+    // 设备的语言，zh en等
+    optional string language = 12;
+
+    // iOS设备的IDFA明文
+    optional string idfa = 13;
+    
+    // 设备生产厂家
+    optional string manufacturer = 14;
+    
+    // Android设备的Android ID，取md5sum摘要，摘要小写
+    optional string android_id = 15;
+  }
+
+  optional Device device = 5;
+
+  // 设备联网IP
+  optional string ip = 6;
+
+  // 部分流量上可能没有有效IP，此时用地域码做定向
+  // 取值见《广点通地域码》
+  optional int32 area_code = 7;
+
+  message User {
+    optional string id = 1;
+
+    message Demographic {
+      enum Gender {
+          GENDER_UNKNOWN = 0;  // 性别未知
+          GENDER_MALE = 1;  // 男
+          GENDER_FEMALE = 2;  // 女
+      }
+      optional Gender gender = 1 [default = GENDER_UNKNOWN];
+
+      // 学历
+      enum Education {
+          EDUCATION_UNKNOWN = 0;  // 学历未知
+          EDUCATION_DOCTOR = 1;  // 博士
+          EDUCATION_MASTER = 2;  // 硕士
+          EDUCATION_COLLEGE = 3;  // 大学生
+          EDUCATION_HIGH_SCHOOL = 4;  // 高中
+          EDUCATION_MIDDLE_SCHOOL = 5;  // 初中
+          EDUCATION_PRIMARY_SCHOOL = 6;  // 小学
+      }
+      optional Education education = 2 [default = EDUCATION_UNKNOWN];
+
+      // 年龄区间，两端都是闭区间
+      optional int32 age_low = 3 [default = 0];
+      optional int32 age_high = 4 [default = 999];
+
+      enum ConsumptionAbilityLevel {
+        CONSUMPTION_ABILITY_LEVEL_UNKNOWN = 0;  // 消费能力未知
+        CONSUMPTION_ABILITY_LEVEL_HIGH = 1;  // 高
+        CONSUMPTION_ABILITY_LEVEL_LOW = 2;  // 低
+      }
+      optional ConsumptionAbilityLevel consume_level = 5;
+      // 由LBS数据挖掘得到的用户住房价格数据
+      optional uint32 house_price = 6;
+    }
+
+    optional Demographic user_demographic = 2;
+
+    message Vertical {
+      // 用户兴趣 id，接口预留，目前未使用
+      optional uint32 id = 1;
+      // 用户兴趣权重，接口预留，目前未使用
+      optional float weight = 2;
+    }
+    repeated Vertical verticals = 3;
+  }
+
+  optional User user = 8;
+
+  message Geo {
+    // 纬度 * 1 000 000（火星坐标系）
+    optional int32 latitude = 1;
+
+    // 精度 * 1 000 000（火星坐标系）
+    optional int32 longitude = 2;
+
+    // 经纬度精度半径，单位米
+    optional double accuracy = 3;
+  }
+
+  optional Geo geo = 9;
+
+  message App {
+    // App所属行业id。
+    // 取值见《APP行业分类.xlsx》
+    optional int64 industry_id = 1;
+
+    // App唯一标识，Andorid应用对应其packegname，iOS应用对应其bundle id
+    optional string app_bundle_id = 2;
+  }
+
+  optional App app = 10;
+
+  // 广告主的Boss QQ号
+  optional uint64 boss_qq = 11;
+  // 是否支持应用直达, 请求级别的属性
+  optional bool support_deep_link = 12 [default = false];
+  // 微信公众号分类
+  repeated uint64 wx_flow_class = 13;
+
+  extensions 10000 to max;
+}
+
+message BidResponse {
+  // 来自BidRequest.id
+  // 替换曝光、点击地址中的宏%%BID_REQUEST_ID%%
+  optional string request_id = 1;
+
+  message Bid {
+    // DSP提供的素材id
+    optional string creative_id = 1;
+
+    // DSP最高出价，CPM，单位:分
+    optional int32 bid_price = 2;
+
+    // 替换DSP曝光监测URL里的宏%%IMPRESSION_PARAM%%，最长500字节，超长截断
+    // 随素材一起上传的DSP曝光监测URL形如：
+    //  http://imp.dsp1.com?bid_request_id=%%BID_REQUEST_ID%%&
+    //  impression_param=%%IMPRESSION_PARAM%%&win_price=%%WIN_PRICE%%
+    // 通过宏%%IMPRESSION_PARAM%%，DSP可以把内部参数从竞价模块透明传输到
+    // 曝光监测模块。
+    // DSP负责参数加解密
+    optional string impression_param = 3;
+
+    // 替换DSP点击监测URL里的宏%%CLICK_PARAM%%，最长500字节，超长截断
+    // 随素材一起上传的DSP点击监测URL形如：
+    //  http://click.dsp1.com?bid_request_id=%%BID_REQUEST_ID%%&
+    //  click_param=%%CLICK_PARAM%%
+    // 通过宏%%CLICK_PARAM%%，DSP可以把内部参数从竞价模块透明传输到
+    // 点击监测模块。
+    // DSP负责参数加解密
+    optional string click_param = 4;
+
+    message DynamicCreative {
+      // DSP动态创意代码片段
+      optional string html_snippet = 1;
+
+      // 当DSP以IFrame代码片段的形式来提供动态创意的时候，
+      // 可以通过调用该JS代码提供的接口来完成以下功能:
+      // 1. 通知流量方IFrame内广告相关素材加载完成，可以展示。
+      // 2. 通知流量方发生了用户点击,流量方负责使用浏览器打开跳转地址
+      // 具体JS接口见《腾讯广点通广告交易平台接入说明文档》
+      optional bool support_gdt_helper_js = 2;
+
+      message ProductInfo {
+        optional string product_id = 1;
+        // 商品一级行业
+        // 取值见《广告主行业分类.xlsx》
+        optional int64 product_industry = 2;
+        // 商品二级行业
+        // 取值见《广告主行业分类.xlsx》
+        optional int64 product_category = 3;
+        // 商品名称
+        optional string product_name = 4;
+        // 商品描述
+        optional string product_description = 5;
+        // 商品图片地址
+        optional string product_multimedia_url = 6;
+      }
+
+      // DSP动态创意对应的商品信息
+      repeated ProductInfo product_infos = 3;
+
+      // 预留，暂未启用
+      repeated string click_url_domain_whitelist = 4;
+    }
+
+    optional DynamicCreative dynamic_creative = 5;
+
+    // 是否让adx过滤已安装app
+    optional bool app_filter = 6 [default = false];
+
+    extensions 10000 to max;
+  }
+
+  message SeatBid {
+    // 来自BidRequest.impressions.id
+    optional string impression_id = 1;
+
+    repeated Bid bids = 2;
+  }
+
+  repeated SeatBid seat_bids = 2;
+
+  // 收到BidRequest至发送完BidResponse的用时，单位:毫秒
+  optional int32 processing_time_ms = 3;
+
+  extensions 10000 to max;
+}

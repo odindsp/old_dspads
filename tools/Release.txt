@@ -1,0 +1,16 @@
+Release Note:
+
+v1.0
+Intelligent_price - 完成对项目智能竞价的标志设定
+Odin_SetLog  - 完成对投放项目日志等级的设定
+
+v1.1
+Intelligent_price - 增加redis连接失败的提示
+Odin_SetLog  - 增加redis连接失败的提示，以及手动输入“日志等级”和“打印时间”导致写入redis错误的问题
+
+v1.2
+Odin_SetLog  -增加iflytek
+
+v1.3
+Intelligent_price - 增加iflytek和adview
+Odin_SetLog  - 增加adview

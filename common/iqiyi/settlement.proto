@@ -1,0 +1,13 @@
+package price;
+
+message Settlement { 
+// Algorithm for price and auth. 
+optional uint32 version = 1; 
+
+// Encrypted price. 
+required bytes price = 2; 
+
+// Authentication information for bidid and price. 
+optional bytes auth = 3; 
+}
+

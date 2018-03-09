@@ -1,0 +1,51 @@
+10 Tumri
+43 BrightRoll
+56 Efficient Frontier
+94 Nielsen OBE (Vizu) - Survey
+130 Broadband Enterprises
+132 Adlens
+144 Campaign Monitor (Integral Ad Science)
+145 DoubleVerify
+182 comScore - vCE
+204 Pulpo Media
+225 Zanox
+226 DoubleClick Rich Media Expandable
+233 Media Innovation Group (Xaxis)
+237 Reddion
+238 Aggregate Knowledge
+260 Alenty
+303 Millward Brown Digital - Survey
+331 Avail Intelligence
+334 Adloox
+342 Adledge
+395 Adnologies
+414 Batch Media
+432 Hi-Media
+441 Hubrus
+445 Project SunBlock
+485 comScore - VoiceFive
+489 Revenue Cloud
+497 Exactag
+523 Spongecell - Expandable
+550 AdYapper
+551 Nielsen Digital Ad Ratings (formerly OCR)
+553 Kpsule - Expandable
+554 Linkstorm - Expandable
+569 Contobox Expandable
+606 Gruvi TV
+617 Mixpo - Expandable
+618 Demand Side Science
+698 GET IT Mobile
+704 GlobalWebIndex
+713 MezzoMedia
+724 Extreme Reach ad server
+743 White Ops
+745 adverserve digital advertising services
+767 SFR
+776 Spark Flow
+780 Where 2 Get It
+785 Scrutineer Survey
+797 ADmantX
+813 Protected Media
+815 Resonate Networks
+828 Crutchfield New Media

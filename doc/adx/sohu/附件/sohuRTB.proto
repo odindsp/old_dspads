@@ -1,0 +1,114 @@
+package sohuadx;
+
+message Request
+{
+    message Impression
+    {
+        message Banner
+        {
+            repeated uint32 mimes = 1;	   //支持的创意类型： 1 图片, 2 Flash, 3 HTML
+            optional uint32 width = 2;     //广告位宽度
+            optional uint32 height = 3;    //广告位高度
+			optional string template = 4;      //广告模板名
+        }
+        message Video
+        {
+            repeated uint32 mimes = 1;     		//支持的视频广告创意类型： 4 mp4
+            optional uint32 durationLimit = 2;  //视频广告时长
+            optional uint32 protocol = 3;  	 	//视频广告投放协议, 如vast
+            optional uint32 width = 4;     		//广告位宽度
+            optional uint32 height = 5;    		//广告位高度
+            optional string pageurl = 6;        //视频url
+            optional string external = 7;       //扩展参数
+            repeated string category = 8;       //视频频道分类
+            optional string title = 9;          //视频名称
+        }
+        enum ScreenLocation	  //广告位在屏幕上的位置
+        {
+            UNKNOWN = 0;    //未知
+            FIRSTVIEW = 1;	//首屏
+            OTHERVIEW = 2;	//非首屏
+        }
+
+        optional uint32 idx = 1;	                  //广告位在此次请求中的编号, 从0开始递增。在一次请求多个广告位时有效
+        optional string pid = 2;                      //广告位ID, 90001：前贴片, 90002：暂停广告, 90003：中插广告, 90004：后贴片
+        optional uint32 bidFloor = 3;                 //曝光底价, CPM计, 单位为人民币分
+        optional Banner banner = 4;    	              //Banner广告位信息
+        optional Video video = 5;                     //Video广告位信息
+        optional ScreenLocation screenLocation = 6;   //广告位在屏幕上的位置
+        optional bool isPreferredDeals = 7;           //是否为 PreferredDeals 流量
+        optional string campaignId = 8;               //执行单ID
+		optional string pageurl = 9;                  //视频url, 临时字段
+        repeated string category = 10;                //vrs 分类, 临时字段
+        optional string title = 11;                   //视频标题, 临时字段
+        optional string lineId = 12;                  //排期包ID
+    }
+
+    message Site
+    {
+        optional string name = 1; 		//媒体名称, 目前可能取值为SOHU、SOHU_NEWS_APP、SOHU_WAP、SOHU_TV、SOHU_TV_APP、56
+        optional string page = 2; 		//当前页面url
+        optional int64 category = 3;	//当前页面频道类别, newCMS分类
+        optional string ref = 4;  		//referrer url, 来源页面url
+    }
+
+    message Device
+    {
+        optional string type = 1;		//Mobile, PC 或者 Wap
+        optional string ip = 2; 		//设备ip地址
+        optional string ua = 3; 		//设备user agent, 详情见文档
+        optional string carrier = 4;	//运营商信息
+        optional string netType = 5;	//网络类型, 2G,3G,WIFI
+        optional string mobileType = 6; //iPhone、iPad、Android Phone、Android Pad, 表示移动设备的类型, 当Device.type 为 Mobile 时有效
+		optional uint32 screenWidth = 7;    //终端屏幕分辨率宽
+        optional uint32 screenHeight = 8;   //终端屏幕分辨率高
+    }
+
+    message User
+    {  
+        optional string suid = 1; 				//suid
+        optional uint32 version = 2;			//suid的版本
+        repeated int64 category = 3;            //用户分类, 预留
+        repeated string searchKeyWords = 4;     //用户搜索词历史, 预留
+		optional string yyid = 5;               //yyid, 预留
+        optional string fyid = 6;               //fyid, 预留
+    }
+
+    required uint32 version = 1;			//协议版本
+    required string bidid = 2;       		//bid request id, 一次bid request可以会包含多个曝光(impression)
+    optional uint32 isTest = 3;				//0非测试, 1测试流量
+    optional Site site = 4;          		//媒体站点信息
+    optional Device device = 5;      		//设备信息
+    optional User user = 6;          		//用户信息
+    repeated Impression impression = 7; 	//曝光信息
+    repeated string excludeAdCategory = 8;	//屏蔽的广告类别, 预留
+}
+
+message Response
+{
+	message Bid
+	{
+		required uint32 price = 1;          //广告出价, CPM计, 单位为人民币分
+		required string adurl = 2;          //广告素材url
+		optional string ext = 3;            //DSP自定义字段
+		optional string clickPara = 4;      //DSP自定义的点击监测动态部分
+		optional string displayPara = 5;    //DSP自定义的展示监测动态部分
+		optional string adPara = 6;         //广告素材参数, 使用前需要提前与搜狐exchange沟通
+		optional string displayMonitor = 7; //第三方动态展示监测，json数组格式的字符串，每个数组元素均为字符串，每个元素的格式为"标签|地址"，标签和地址之前用英文字符'|'分割
+        optional string clickMonitor = 8;   //第三方动态点击监测，json数组格式的字符串，每个数组元素均为字符串，每个元素的格式为"标签|地址"，标签和地址之前用英文字符'|'分割
+	}
+
+	message SeatBid
+	{
+		optional uint32 idx = 1;	   //对应Request.Impression.idx, 广告位在本次请求中的编号
+		repeated Bid bid = 2;          //某个广告位的竞价结果
+	}
+
+	required uint32 version = 1;	   //Sohu Ad Exchange的协议版本号
+	required string bidid = 2;    	   //本次竞价的ID
+	repeated SeatBid seatbid = 3; 	   //曝光的竞拍结果 seatbid长度为0, 表示放弃竞价
+}
+
+
+
+

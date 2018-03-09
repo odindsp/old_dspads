@@ -1,0 +1,21 @@
+./Get_Impclk_num.sh  groupidmapid.txt  date（eg:20160112） 
+功能：读取groupidmapid.txt文件中的mapids，过滤date这天的展现日志的 展现点击数
+      在当前路径中生成count_date.txt 存储结果
+
+
+
+./Get_White_info.sh  groupidmapid.txt  date
+功能：读取groupidmapid.txt文件中的mapids，过滤date这天的展现点击日志的基本信息
+      结果存储在当前路径baseInfoCount_date.txt文件中
+      根据基本信息筛选统计deviceid，结果存储在当前路径中的deviceid.txt中。
+
+
+
+./Get_Appsid.sh  groupidmapid.txt date
+功能：读取groupidmapid.txt文件中的mapids，过滤date这天的展现点击日志中 包含appsid的日志信息  在当前路径中生成appsid_date.txt存储结果。
+
+
+
+groupidmapid.txt 文件内容格式:(项目id 项目下的创意id|项目下的创意id|...)
+6583d6ae-a40a-486d-85a1-7f21fb939750 764359b9-9dcd-4fcb-86b8-dd4df584046e|caf780d0-a906-4b8e-8378-52e7b4841f73|27892a84-a873-4d0e-a911-eac8838eb6e3
+26e3fd8a-d89e-4bb3-9078-18566f5554ed 74439b63-58f5-4d3d-bb6c-54187f7771f7|55252b01-0016-4c44-8745-df022f0d4f31|e5673de1-763c-4ac6-92ab-331935c663a9 

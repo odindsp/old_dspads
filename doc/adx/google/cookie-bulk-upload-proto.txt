@@ -1,0 +1,169 @@
+// Copyright 2016 Google Inc. All Rights Reserved.
+
+
+// The type of identifier being uploaded.
+enum UserIdType {
+  // A user identifier received through the cookie matching service.
+  GOOGLE_USER_ID = 0;
+  // iOS Advertising ID.
+  IDFA = 1;
+  // Android Advertising ID.
+  ANDROID_ADVERTISING_ID = 2;
+}
+
+// Update data for a single user.
+message UserDataOperation {
+  // User id.  The type is determined by the user_id_type field.
+  //
+  // Must always be present.  Specifies which user this operation applies to.
+  optional string user_id = 1 [
+      default = ""
+      ];
+
+  // The type of the user id.
+  optional UserIdType user_id_type = 14 [default = GOOGLE_USER_ID];
+
+  // The id of the userlist.  This can be retrieved from the AdWords API or
+  // through your Technical Account Manager.
+  optional int64 user_list_id = 4 [default = 0];
+
+  // Optional time (seconds since the epoch) when the user performed an action
+  // causing him to be added to the list.  Using the default value of 0
+  // indicates that the current time on the server should be used.
+  optional int64 time_added_to_user_list = 5 [
+      default = 0
+      ];
+
+  // Same as time_added_to_user_list but with finer grained time resolution, in
+  // microseconds.  If both timestamps are specified,
+  // time_added_to_user_list_in_usec will be used.
+  optional int64 time_added_to_user_list_in_usec = 8 [
+      default = 0
+      ];
+
+  // Set to true if the operation is a deletion.
+  optional bool delete = 6 [default = false];
+
+  // Set true if the user opted out from being targeted.
+  optional bool opt_out = 12 [default = false];
+
+}
+
+// This protocol buffer is used to update user data.  It is sent as the payload
+// of an HTTPS POST request with the Content-Type header set to
+// "application/octet-stream" (preferrably Content-Encoding: gzip).
+message UpdateUsersDataRequest {
+  // Multiple operations over user attributes or user lists.
+  repeated UserDataOperation ops = 1;
+
+  // If true, request sending notifications about the given users in the
+  // response.  Note that in some circumstances notifications may not be sent
+  // even if requested.  In this case the notification_status field of the
+  // response will be set to NOTIFICATIONS_OMITTED.
+  optional bool send_notifications = 2 [default = false];
+}
+
+// Response error codes.
+enum ErrorCode {
+  NO_ERROR = 0;
+
+  // Some of the user data operations failed.  See comments in the
+  // UpdateUserDataResponse
+  PARTIAL_SUCCESS = 1;
+
+  // Provided network_id cannot add data to attribute_id or non-HTTPS.
+  PERMISSION_DENIED = 2;
+
+  // Cannot parse payload.
+  BAD_DATA = 3;
+
+  // Cannot decode provided cookie.
+  BAD_COOKIE = 4;
+
+  // Invalid or closed user_list_id.
+  BAD_ATTRIBUTE_ID = 5;
+
+  // An invalid nid parameter was provided in the request.
+  BAD_NETWORK_ID = 7;
+
+  // Request payload size over allowed limit.
+  REQUEST_TOO_BIG = 8;
+
+  // No UserDataOperation messages in UpdateUsersDataRequest.
+  EMPTY_REQUEST = 9;
+
+  // The server could not process the request due to an internal error. Retrying
+  // the same request later is suggested.
+  INTERNAL_ERROR = 10;
+
+  // The timestamp is a past/future time that is too far from current time.
+  BAD_TIMESTAMP = 12;
+}
+
+// Information about an error with an individual user operation.
+message ErrorInfo {
+  // The user_list_id in the request which caused problems.  This may be empty
+  // if the problem was with a particular user id.
+  optional int64 user_list_id = 2 [default = 0];
+
+  // The user_id which caused problems.  This may be empty if other data was bad
+  // regardless of a cookie.
+  optional string user_id = 3 [
+      default = ""
+      ];
+
+  optional ErrorCode error_code = 4;
+}
+
+// Notification code.
+enum NotificationCode {
+  // A cookie is considered inactive if Google has not seen any activity related
+  // to the cookie in several days.
+  INACTIVE_COOKIE = 0;
+}
+
+// Notification status code.
+enum NotificationStatus {
+  // No need to send notifications for this request.
+  NO_NOTIFICATION = 0;
+
+  // Google decided to not send notifications, even though there were
+  // notifications to send.
+  NOTIFICATIONS_OMITTED = 1;
+}
+
+// Per user notification information.
+// Next tag: 3
+message NotificationInfo {
+  // The user_id for which the notification applies.  One of the user_ids sent
+  // in an UserDataOperation.
+  optional string user_id = 1 [
+      default = ""
+      ];
+
+  optional NotificationCode notification_code = 2;
+}
+
+// Response to the UpdateUsersDataRequest.  Sent in HTTP response to the
+// original POST request, with the Content-Type header set to
+// "application/octet-stream".  The HTTP response status is either 200 (no
+// errors) or 400, in which case the protocol buffer will provide error details.
+message UpdateUsersDataResponse {
+  // When status == PARTIAL_SUCCESS, some (not all) of the operations failed and
+  // the "errors" field has details on the types and number of errors
+  // encountered.  When status == NO_ERROR, all the data was imported
+  // successfully.  When status > PARTIAL_SUCCESS no data was imported.
+  optional ErrorCode status = 1;
+
+  // Each operation that failed is reported as a separate error here when
+  // status == PARTIAL_SUCCESS.
+  repeated ErrorInfo errors = 2;
+
+  // Useful, non-error, information about the user ids in the request.  Each
+  // NotificationInfo provides information about a single user id.  Only sent if
+  // UpdateUsersDataRequest.send_notifications is set to true.
+  repeated NotificationInfo notifications = 3;
+
+  // Indicates why a notification has not been sent.
+  optional NotificationStatus notification_status = 4;
+}

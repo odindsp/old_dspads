@@ -1,0 +1,291 @@
+// 请求
+message BidRequest{
+  // 请求ID，唯一标识本次请求，明文字符串
+  required string id = 1;
+
+  message Imp{
+    // 推广位编号
+    required string id = 1;
+
+    message Banner{
+      // 广告宽度 单位：像素
+      required int32 w = 1;
+      // 广告高度 单位：像素
+      required int32 h = 2;
+      // 拒绝的广告创意类型，取值参考API文档(3.9)
+      repeated int32 btype = 3;
+      // 拒绝的广告属性，取值参考API文档(3.10)
+      repeated int32 battr = 4;
+    }
+    optional Banner banner = 2;
+
+    message Video{
+       // 支持播放的视频格式，参考API文档(3.13)
+       repeated int32 mimes = 1;
+       // 广告位类型，参考API文档(3.12)
+       optional int32 display = 2;
+       // 视频广告最小时长
+       optional int32 minduration = 3;
+       // 视频广告最大时长
+       optional int32 maxduration = 4;
+       // 广告宽度
+       required int32 w = 5;
+       // 广告高度
+       required int32 h = 6;
+       // 拒绝的广告属性，取值参考API文档(3.10)
+       repeated int32 battr = 7;
+    }
+    optional Video video = 3;
+
+    message Native{
+       // 原生广告布局样式，参考API文档(3.2.1)
+       required int32 layout = 1;
+       // 广告数量，默认值：1
+       optional int32 plcmtcnt = 2;
+       // 拒绝的广告点击类型，参考API文档(3.7)
+       repeated int32 bctype = 3;
+
+       // 原生广告元素列表，当前固定为5个元素，分别为标题（title），Icon（img），Large image（img），Description（data），Rating（data）
+       message Assets{
+          // 广告元素ID
+          required int32 id = 1;
+          // 广告元素是否必须，1：必须，0：可选
+          optional int32 required = 2;
+
+          message Title{
+             // Title元素最大文字长度
+             required int32 len = 1;
+          }
+          optional Title title = 3;
+
+          message Img{
+             // Image元素的类型，参考API文档(3.2.2)
+             required int32 type = 1;
+             required int32 w = 2;
+             // Image元素要求的最小宽度
+             optional int32 wmin = 3;
+             required int32 h = 4;
+             // Image元素要求的最小高度
+             optional int32 hmin = 5;
+             // Image元素支持的图片类型，参考API文档(3.14)
+             repeated int32 mimes = 6;
+          }
+          optional Img img = 4;
+
+          message Data{
+             // 数据类型，参考API文档(3.2.3)
+             required int32 type = 1;
+             // 元素最大文字长度
+             required int32 len = 2;
+          }
+          optional Data data = 5;
+       }
+       repeated Assets assets = 4;
+    }
+    optional Native native = 4;
+    // 底价,分/CPM
+    required int32 bidfloor = 5;
+    // 底价的货币种类，目前只支持”CNY”
+    optional string bidfloorcur = 6;
+
+    message Ext{
+       // 是否全插屏广告，参考API文档(3.15)
+       optional int32 instl = 1;
+       // 是否开屏广告，参考API文档(3.15)
+       optional int32 splash = 2;
+    }
+    optional Ext ext = 7;
+    
+    optional int32 adpos = 8;
+  }
+  repeated Imp imp = 2;
+
+  message App{
+     // 唯一id
+     required string id = 1;
+     // 应用名字
+     required string name = 2;
+     // App类型，参考表格《App分类对应表v1.8.5》
+     repeated int32 cat = 3;
+     // App软件包名
+     optional string bundle = 4;
+     // App市场下载地址
+     required string storeurl = 5;
+  }
+  required App app = 3;
+
+  message Geo{
+   // 纬度（-90~90），负数表示南纬。
+   required double lat = 1;
+   // 经度（-180~180），负数表示西经。
+   required double lon = 2;
+  }
+  message Device{
+
+     // dpid, type 参考API文档(3.3)
+     message DPID{
+        // 平台设备ID类型
+        required int32 type = 1;
+        required string id = 2;
+     }
+     repeated DPID dpids = 1;
+
+      // did, type 参考API文档(3.3)
+     message DID{
+        // 平台设备ID类型
+        required int32 type = 1;
+        required string id = 2;
+     }
+     repeated DID dids = 2;
+     // 用户浏览器User-Agent字符串
+     optional string ua = 3;
+     // Ip地址
+     optional string ip = 4;
+     // 地理位置信息
+     optional Geo geo = 5;
+     // 运营商，参考API文档(3.4)
+     optional int32 carrier = 6;
+     // 制造商
+     optional string make = 7;
+     // 设备型号
+     optional string model = 8;
+     // 设备操作系统，参考API文档(3.11)
+     optional int32 os = 9;
+     // 设备操作系统版本号
+     optional string osv = 10;
+     // 网络连接类型，参考API文档(3.5)
+     optional int32 connectiontype = 11;
+     // 设备类型，参考API文档(3.6)
+     optional int32 devicetype = 12;
+     // 屏幕分辨率,宽度
+     optional int32 w = 13;
+     // 屏幕分辨率,高度
+     optional int32 h = 14;
+     // 屏幕密度,IOS 系统 1 为标清,大于等于2为高清;Android 系统小于 1.5为标 清,大于等于1.5为高清
+     optional double pxratio = 15;
+     // 设备屏幕方向：1 - 竖向，2 - 横向
+     optional int32 orientation = 16;
+  }
+  required Device device = 4;
+  message User{
+     optional string id = 1;
+     optional int32 gender = 2;
+     optional int32 yob = 3;
+     optional string keywords = 4;
+     optional Geo geo = 5;
+     optional string searchkey = 6;
+  }
+  optional User user = 5;
+  // 拒绝的广告行业类型，参考表格《广告主行业分类对应表v1.11》
+  repeated int32 bcat = 6;
+  // 拒绝的广告主域名
+  repeated string badv = 7;
+}
+
+// 响应
+message BidResponse{
+   // 响应的Bid request的唯一id
+   required string id = 1;
+
+   // 当前仅支持一个SeatBid对象
+   message SeatBid{
+
+      message Bid{
+         // 对应的Impression id
+         required string impid = 1;
+         // 出价,单位：分/CPM
+         required int32 price = 2;
+         // 广告ID
+         required string adid = 3;
+
+         // 广告物料，Banner广告为Banner对象，Video广告为Video对象，Native广告为Native对象
+         message Banner{
+            // 图片素材URL
+            required string url = 1;
+         }
+         optional Banner banner = 4;
+
+         message Video{
+            // 视频素材URL
+            required string url = 1;
+         }
+         optional Video video = 5;
+
+         message Native{
+            // 原生广告元素列表，当前固定为5个元素，分别为标题（title），Icon（img），Large image（img），Description（data），Rating（data）
+            message Assets{
+               // 广告元素ID
+               required int32 id = 1;
+
+               message Title{
+                  // Title元素的内容文字
+                  required string text = 1;
+               }
+               optional Title title = 2;
+
+               message Img{
+                  // Image元素的URL地址
+                  required string url = 1;
+                  // Image元素的宽度，单位为像素
+                  optional int32 w = 2;
+                  // Image元素的高度，单位为像素
+                  optional int32 h = 3;
+               }
+               optional Img img = 3;
+
+               message Data{
+                  // 数据显示的名称
+                  optional string label = 1;
+                  // 数据的内容文字
+                  required string value = 2;
+               }
+               optional Data data = 4;
+            }
+            repeated Assets assets = 1;
+         }
+         optional Native native = 6;
+
+         // 广告物料宽度，单位px，仅当全插屏广告时有效
+         optional int32 w = 7;
+         // 广告物料高度，单位px，仅当全插屏广告时有效
+         optional int32 h = 8;
+         // DSP及第三方广告展示监测地址,第一个地址加入#WIN_PRICE#宏，为成交价格
+         repeated string iurl = 9;
+         // DSP及第三方广告点击监测地址
+         repeated string cturl = 10;
+         // 广告点击目标url
+         required string curl = 11;
+         // 激活效果地址，用于CPA广告的激活效果回调
+         optional string aurl = 12;
+         // Campaign ID
+         optional string cid = 13;
+         // 广告物料ID
+         optional string crid = 14;
+         // 点击目标类型，参考API文档(3.7)
+         optional int32 ctype = 15;
+         // 广告行业类型，参考表格《广告主行业分类对应表v1.11》
+         repeated int32 cat = 16;
+         // 广告属性，参考API文档(3.10)
+         repeated int32 attr = 17;
+         // 广告主检查主域名或顶级域名
+         optional string adomain = 18;
+         message Ext{
+            // 仅在全插屏广告时返回，1：插屏，2：全屏
+            optional int32 instl = 1;
+            // 仅在开屏广告时返回，标识开屏广告的播放时长（秒）
+            optional int32 adt = 2;
+            // 仅在开屏广告时返回,标识开屏广告的过期时间 , 格式 :YYYYMMdd , 例如 20140730,广告展示到 2014 年7月29日结束,7月30日不再展示
+            optional string ade = 3;
+            // 点击后下载App的包名，仅当ctype为2 - 下载App时有效
+            optional string bundle = 4;
+            // 下载App的名称，下载时会显示此名称
+            optional string apkname = 5;
+         }
+         optional Ext ext = 19;
+         optional string admark = 20;
+         optional string adsource = 21;
+      }
+      repeated Bid bid = 1;
+   }
+   repeated SeatBid seatbid = 2;
+}

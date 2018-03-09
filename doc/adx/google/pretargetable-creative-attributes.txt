@@ -1,0 +1,28 @@
+2 CreativeType: Image/Rich Media
+3 VideoType: Adobe Flash FLV
+7 Tagging: IsTagged
+8 CookieTargeting: IsCookieTargeted
+9 UserInterestTargeting: IsUserInterestTargeted
+12 ExpandingDirection: ExpandingNone
+13 ExpandingDirection: ExpandingUp
+14 ExpandingDirection: ExpandingDown
+15 ExpandingDirection: ExpandingLeft
+16 ExpandingDirection: ExpandingRight
+17 ExpandingDirection: ExpandingUpLeft
+18 ExpandingDirection: ExpandingUpRight
+19 ExpandingDirection: ExpandingDownLeft
+20 ExpandingDirection: ExpandingDownRight
+25 ExpandingDirection: ExpandingUpOrDown
+26 ExpandingDirection: ExpandingLeftOrRight
+27 ExpandingDirection: ExpandingAnyDiagonal
+28 ExpandingAction: RolloverToExpand
+30 InstreamVastVideoType: Vpaid Flash
+32 MraidType: MRAID
+44 InstreamVastVideoType: Skippable Instream Video
+48 RichMediaCapabilityType: RichMediaCapabilityNonSSL
+69 InstreamVastVideoType: Non Skippable Instream Video
+70 NativeEligibility: Native Eligible
+71 InstreamVastVideoType: Non Vpaid Flash
+72 NativeEligibility: Native Not Eligible
+73 InterstitialSize: AnyInterstitial
+74 InterstitialSize: NonInterstitial

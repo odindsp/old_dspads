@@ -1,0 +1,36 @@
+0 Error pages
+6 Parked domains
+8 Forums
+13 Sexually suggestive content
+16 Juvenile, gross & bizarre content
+20 File-sharing pages
+21 Image-sharing pages
+23 Social networks
+26 Below the fold or unknown position
+38 Porn
+39 Digital Content Label for DL-G rating
+40 Digital Content Label for DL-PG rating
+41 Digital Content Label for DL-T rating
+42 Digital Content Label for DL-MA rating
+43 Digital Content Not Yet Rated
+44 Live Streaming Video
+45 Military & international conflict
+52 Profanity & rough language
+55 Crime, police & emergency
+56 Death & tragedy
+57 Video
+58 Embedded video
+59 Game
+65 Violent content
+66 Recreational drug content
+87 Mobile app non-interstitial
+119 Gambling content
+120 Political content
+121 Tobacco content
+122 Weapons content
+123 Derogatory content
+124 Vehicle accidents
+125 Religious content
+126 Content about alcohol
+146 Content sensitive social issues
+160 Content could not be crawled (label status unknown)

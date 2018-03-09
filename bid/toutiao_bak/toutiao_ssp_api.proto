@@ -1,0 +1,199 @@
+package toutiao_ssp.api;
+enum AdType {
+    NEWS_FEED = 1;      // 头条信息流
+    TEXT_LINK = 2;      // 详情文字链
+    IOS_APP = 3;        // ios应用下载
+    ANDROID_APP = 4;    // android 应用下载
+    SPLASH = 5;         // 头条开屏
+    DETAIL_BANNER = 6;  // 详情图片广告
+};
+
+message AdSlot {
+    enum Position {
+        SPLASH = 1;
+        FEED = 2;
+        DETAIL = 4;
+    };
+    
+    message Banner {
+        required uint32 width = 1;
+        required uint32 height = 2;
+        required Position pos = 3;
+    };
+    required string id = 1;         // 广告位id
+    repeated Banner banner = 2;     // 广告位空间描述
+    repeated AdType ad_type = 3;    // 可接收的广告类型
+    optional uint32 bid_floor = 4;  // 单位为分
+};
+
+message Publisher {
+    required string id = 1;
+    optional string name = 2;
+    optional string cat = 3;
+    optional string domain = 4;
+};
+
+message Content {
+    message Producer {
+        required string id = 1;
+        optional string name = 2;
+        optional string cat = 3;
+        optional string domain = 4;
+    };
+
+    required string id = 1;
+    optional string title = 2;
+    optional string series = 3;
+    optional string url = 4;
+    optional string keywords = 5;
+    optional string contentrating = 6;
+    optional string userrating = 7;
+    optional string context = 8;
+    optional Producer producer = 9;
+    optional string language = 10;
+};
+
+message App {
+    required string id = 1 [default='11'];
+    optional string name = 2;
+    optional string domain = 3;
+    optional string ver = 4;
+    optional string bundle = 5;
+    optional uint32 privacypolicy = 6;
+    optional uint32 paid = 7;
+    optional Publisher publisher = 8;
+    optional Content content = 9;
+    optional string keywords = 10;
+};
+
+message Geo {
+    optional double lat = 1;
+    optional double lon = 2;
+    optional string country = 3;
+    optional string region = 4;   // 谈判待定
+    optional string city = 5;
+    optional string type = 6;
+};
+
+message Device {
+    enum ConnectionType {
+        Honeycomb = 1;  // 3G网
+        WIFI = 2;
+        UNKNOWN = 3;
+    };
+    enum DeviceType {
+        PHONE = 1;
+        TABLET = 2;
+    };
+
+    required bool dnt = 1;              // 是否允许追踪  待定
+    required string ua = 2;             // 待定 浏览器
+    optional string ip = 3;             // 
+    optional Geo geo = 4;
+    optional string device_id = 5;
+    optional string device_id_md5 = 6;
+    optional string carrier = 7;
+    optional string language = 8;
+    optional string make = 9;           // 制造商
+    optional string model = 10;         // 型号
+    optional string os = 11;            // ios or android
+    optional string osv = 12;
+    optional bool js = 13;              // js support
+    optional ConnectionType connection_type = 14;
+    optional DeviceType device_type = 15;
+};
+
+message Data {
+    message Segment {
+        optional string id = 1;
+        optional string name = 2;
+        optional string value = 3;
+    };
+    required string id = 1;
+    optional string name = 2;
+    optional Segment segment = 3;
+};
+
+message User {
+    enum Gender {
+        MALE = 1;
+        FEMALE = 2;
+        UNKNOWN = 3;
+    };
+    required string id = 1;
+    optional string buyer_id = 2;
+    optional string yob = 3;        // 出生年份
+    optional Gender gender = 4;
+    optional string keywords = 5;   // 兴趣关键
+    optional Geo geo = 6;
+    optional Data data = 7;
+};
+
+message BidRequest {
+    required string request_id = 1;
+    required string api_version = 2;  // 接口版本
+    repeated AdSlot adslots = 3;
+    required App app = 4;
+    required Device device = 5;
+    required User user = 6;
+};
+
+message MaterialMeta {
+    message ImageMeta {
+        optional string description = 1;  // 应用下载额外的描述
+        required uint32 width = 2;        // 大图小图的问题
+        optional uint32 height = 3;
+        required string url = 4;          // 图片的外链, 常用格式
+    };
+
+    message ExternalMeta {
+        required string url = 1;
+    };
+
+    message AndroidApp {
+        required string app_name = 1;
+        required string download_url = 2;
+        optional string open_url = 3;      // 安装之后打开应用的url
+        optional string package = 4;
+    };
+
+    message IosApp {
+        required string app_name = 1;
+        required string download_url = 2;
+        optional string open_url = 3;
+        optional string appleid = 4;
+        optional string ipa_url = 5;      // 越狱链接
+    };
+
+    required AdType ad_type = 1;
+    required string nurl = 2;             // winnotice url
+    optional string title = 3;            // 除detail_banner之外必须
+    required string source = 4;           // 来源, 默认dsp名
+    optional ImageMeta image_banner = 5;
+    optional ExternalMeta external = 6;   // 对于落地页广告才有
+    optional AndroidApp android_app = 7;  // android应用下载才有
+    optional IosApp ios_app = 8;          // ios应用下载才有
+    repeated string show_url = 9;         // 展现监测
+    repeated string click_url = 10;       // 点击监测
+    optional bool is_inapp = 11;          // is_inapp=true以原生态打开
+};
+
+message Bid {
+    required string id = 1;
+    required string adslot_id = 2;
+    required uint32 price = 3;           // 单位为分
+    required uint64 adid = 4;            // 创意id
+    required MaterialMeta creative = 5;  // 素材
+};
+
+message SeatBid {
+    repeated Bid ads = 1;
+    optional string seat = 2;  // 广告来源dsp识别
+};
+
+message BidResponse {
+    required string request_id = 1;
+    repeated SeatBid seatbids = 2;
+    optional uint64 error_code = 3;  // 请求出错时的错误码，用于问题排查
+};
+

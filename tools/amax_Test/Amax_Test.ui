@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Amax_Test</class>
+ <widget class="QWidget" name="Amax_Test">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>11</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+    <kerning>true</kerning>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>移动广告交易平台接口测试程序</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QLabel" name="requestUrlLabel">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>50</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>服务器地址</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="requestGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>110</y>
+     <width>600</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title">
+    <string>请   求</string>
+   </property>
+   <widget class="QTextEdit" name="requestTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>560</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit:hover{
+	color:black;
+	background-color:rgb(255, 255, 230);
+}
+QTextEdit:focus{
+	color:black;
+	background-color:rgb(203, 232, 246);
+}
+</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="responseGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>110</y>
+     <width>600</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title">
+    <string>应  答</string>
+   </property>
+   <widget class="QTextEdit" name="responseTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>560</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="sendRequestPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>360</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>发 送 请 求</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>清 空 输 入</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="platComboBox">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>40</y>
+     <width>251</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox QAbstractItemView::item {
+    min-height: 35px; 
+}
+QComboBox QAbstractItemView::item:hover{
+	color:black;
+	background-color:rgb(203, 232, 246);
+}
+</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>芒果移动广告交易平台(AMAX)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>InMobi移动广告公司(InMobi)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>乐视视频移动广告平台(Letv)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>科大讯飞广告交易平台(Iflytek)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AdView广告优化平台(AdView)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>阿里妈妈推广营销平台(Tanx)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>掌游天下广告交易平台(Zplay)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Baidu流量交易服务平台(BES)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>光音网络交易平台(Goyoo)</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="readRequestPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>150</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>读 取 请 求</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="writeResponsePushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>保 存 应 答</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="typeLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>40</y>
+     <width>161</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>JSON字符串类型</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="typeLabel">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>40</y>
+     <width>71</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>数据类型</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="methodComboBox">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>40</y>
+     <width>111</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox QAbstractItemView::item {
+    min-height: 35px; 
+}
+QComboBox QAbstractItemView::item:hover{
+	color:black;
+	background-color:rgb(203, 232, 246);
+}
+</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>POST方式</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>GET方式</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="methodLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>70</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>提交方式</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="typeLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>40</y>
+     <width>71</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>广告平台</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="urlLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>41</y>
+     <width>401</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit:hover{
+	color:black;
+	background-color:rgb(255, 255, 230);
+}
+
+QLineEdit:focus{
+	color:black;
+	background-color:rgb(203, 232, 246);
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sendRequestByBatchPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>430</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>批 量 发 送</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="autoSaveResponseCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>740</y>
+     <width>130</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>命名格式：年月日_时分秒_Response_平台类型</string>
+   </property>
+   <property name="text">
+    <string>自动保存响应</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="autoFormatJsonCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>780</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>命名格式：年月日_时分秒_Response_平台类型</string>
+   </property>
+   <property name="text">
+    <string>自动格式化JSON</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="testByStressPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>500</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>压 力 测 试</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="sendByBatchProgressBar">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>830</y>
+     <width>1221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sendByBatchLabel">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>840</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>批量处理进度</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="copyDataPushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>570</y>
+     <width>130</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>复 制 数 据</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

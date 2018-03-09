@@ -1,0 +1,36 @@
+{
+  "id": "7dafbbccf2b74beb8ff9bd6af7784340",
+  "seatbid": [
+    {
+      "bid": [
+        {
+          "id": "20151022-170118_bidresp_151-2751-rVCD-1137",
+          "impid": "1",
+          "price": 0,
+          "adid": "20151022-170118_TC01_151-2751-pE7m-1135_1",
+          "nurl": "http://103.249.254.121/verify?d=561db4af797e160600a171d6&p=5618b017797e160600a171d5&s=undefined&m=AAABUI7H7-VutNCQ9BsxzkfFM4as0YRq7mJaRw&sm=AAABUI7H7-UBAgpwguNxnFvFn5M3PtGtlXPaCA&origin=http%3A%2F%2Fbid.adview.cn%2Fagent%2Fdisplay%3Fto%3Dbf98cd2e54525c7a3b8e6fb08d0287f6%26tm%3D0%26ro%3D1%26ca%3D0%26adl%3D%26sgt%3D0%26as%3D320x50%26se%3D%26adi%3D20151022-170118_TC01_151-2751-pE7m-1135_1%26aid%3DSDK20151423020948n35hyondwkefaqb%26cv%3D%26ti%3D1445504483%26agl%3D%26ai%3DN-zHjlABAAB-MgNEcjM-VWI2AYf8cFiO1qZEyJO-Rm8SZdMymd-E2T4%26ia%3D%26sv%3D10000%26ud%3D%26agt%3D0%26bi%3Dcom.heleiwei.quickask%26st%3D0%26src%3D6%26sy%3D0",
+          "adm": "{\"src\":\"http://pgdt.gtimg.cn/gdt/0/CAAB6WnAABWJwpTA-jJFh_y.jpg/0?ck=5039ef9a1749518ad70f88bf40b0b8b5\",\"width\":320,\"height\":50,\"adID\":\"20151022-170118_TC01_151-2751-pE7m-1135_1\",\"type\":2,\"title\":\"\",\"text\":\"\"}",
+          "adomain": "http://c.gdt.qq.com/gdt_mclick.fcg?viewid=jxHVJkLx1GPlf84dg7YXVSVQabXSkJHP7rwtEkwHhgVQx0a3KnaRdBYDaOuqdWfNuEF_nhkE8LlTzstnA7j1xmw50HCsd0rFUFwye99tPVQBrXDZ_uH1ZZFUvepzFi7n3adC7sjSF0HH5jNV!yWO6cv4mtDmiHoJ67UmJfYeNYHdvsJAdl71NGUBXRvZybVsM7yQ8ZebKZtkMIAfdo78GA&jtype=0&i=1&os=2&acttype=35&s=%7B%22up_x%22%3A-999%2C%22up_y%22%3A-999%2C%22down_y%22%3A-999%2C%22down_x%22%3A-999%7D",
+          "bundle": "",
+          "iurl": "http://103.249.254.121/view?d=561db4af797e160600a171d6&p=5618b017797e160600a171d5&s=undefined&m=AAABUI7H7-VutNCQ9BsxzkfFM4as0YRq7mJaRw&sm=AAABUI7H7-UBAgpwguNxnFvFn5M3PtGtlXPaCA&origin=http%3A%2F%2Fbid.adview.cn%2Fagent%2Fdisplay%3Fto%3Dbf98cd2e54525c7a3b8e6fb08d0287f6%26tm%3D0%26ro%3D1%26ca%3D0%26adl%3D%26sgt%3D0%26as%3D320x50%26se%3D%26adi%3D20151022-170118_TC01_151-2751-pE7m-1135_1%26aid%3DSDK20151423020948n35hyondwkefaqb%26cv%3D%26ti%3D1445504483%26agl%3D%26ai%3DN-zHjlABAAB-MgNEcjM-VWI2AYf8cFiO1qZEyJO-Rm8SZdMymd-E2T4%26ia%3D%26sv%3D10000%26ud%3D%26agt%3D0%26bi%3Dcom.heleiwei.quickask%26st%3D0%26src%3D6%26sy%3D0",
+          "cid": "",
+          "crid": "",
+          "cat": "",
+          "attr": "",
+          "w": 320,
+          "h": 50,
+          "curl": "http://103.249.254.121/click?d=561db4af797e160600a171d6&p=5618b017797e160600a171d5&s=undefined&m=AAABUI7H7-VutNCQ9BsxzkfFM4as0YRq7mJaRw&sm=AAABUI7H7-UBAgpwguNxnFvFn5M3PtGtlXPaCA&origin=http%3A%2F%2Fbid.adview.cn%2Fagent%2Fclick%3Fto%3Dbf98cd2e54525c7a3b8e6fb08d0287f6%26tm%3D0%26ro%3D1%26ca%3D0%26adl%3D%26sgt%3D0%26as%3D320x50%26se%3D%26adi%3D20151022-170118_TC01_151-2751-pE7m-1135_1%26aid%3DSDK20151423020948n35hyondwkefaqb%26cv%3D%26ti%3D1445504483%26agl%3D%26ai%3DN-zHjlABAAB-MgNEcjM-VWI2AYf8cFiO1qZEyJO-Rm8SZdMymd-E2T4%26ia%3D%26sv%3D10000%26ud%3D%26agt%3D0%26bi%3Dcom.heleiwei.quickask%26st%3D0%26src%3D6%26sy%3D0",
+          "type": 2,
+          "extiurl": [
+            "http://103.249.254.121/notify?checktype=extiurl&d=561db4af797e160600a171d6&p=undefined&s=undefined"
+          ],
+          "action": "click",
+          "admtype": "json"
+        }
+      ],
+      "seat": "561db4af797e160600a171d6"
+    }
+  ],
+  "bidid": "48dcd8e87eae9cf15384429176bdfbed",
+  "nbr": 0
+}

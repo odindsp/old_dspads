@@ -1,0 +1,281 @@
+package com.immomo.moaservice.third.rtb.v12;
+option java_outer_classname = "MomoExchange";
+
+message BidRequest {
+    // 竞价请求的唯一标识
+    required string id = 1;
+    // API的版本号
+    required string version = 2;
+    // 是否是测试请求.测试请求的广告不会计费和展示
+    optional bool is_test = 3 [default = false];
+    // 是否是Ping请求.Ping请求不会触发竞价
+    optional bool is_ping = 4 [default = false];
+
+    // Impression信息.不同广告位对应不同Imp,一次竞价请求至少包含一个Imp对象
+    message Imp {
+        // Imp的ID
+        required string id = 1;
+        // 广告位ID
+        required string slotid = 2;
+        // 底价,单位元,小数点后最多两位
+        optional double bidfloor = 3;
+
+        // 原生广告对象. 1.0版本API只支持原生广告竞价,此项必填.
+        message Native {
+            repeated NativeFormat native_format = 1;
+        }
+        optional Native native = 4;
+
+        // 屏蔽的广告主类别
+        repeated string bcat = 5;
+        // 屏蔽的广告主domain
+        repeated string badv = 6;
+    }
+    repeated Imp imp = 5;
+
+    // 设备信息
+    message Device {
+        // 操作系统类型, iOS或Android
+        optional string os = 1;
+        // 操作系统版本,如9.2
+        optional string osv = 2;
+        // 设备型号,例如Nexus,iphone
+        optional string model = 3;
+        // 手机制造商,例如apple,Samsung
+        optional string make = 4;
+        // IP地址
+        optional string ip = 5;
+        // MD5加密的设备MAC地址
+        optional string macmd5 = 6;
+        // 设备号.安卓系统为IMEI, iOS系统为IDFA
+        optional string did = 7;
+        // MD5加密的设备号.安卓系统为加密的IMEI, iOS系统为加密的IDFA
+        optional string didmd5 = 8;
+        // 网络类型
+        enum ConnectionType {
+            CONNECTION_UNKNOWN = 0;
+            ETHERNET = 1;
+            WIFI = 2;
+            CELL_UNKNOWN = 3;
+            CELL_2G = 4;
+            CELL_3G = 5;
+            CELL_4G = 6;
+        }
+        optional ConnectionType connectiontype = 9;
+        // user agent
+        optional string ua = 10;
+        // 设备当前的位置信息
+        optional Geo geo = 11;
+    }
+    optional Device device = 6;
+
+    // 应用信息. 当前所有流量来自陌陌
+    message App {
+        // 应用ID
+        optional string id = 1;
+        // 应用名称
+        optional string name = 2;
+        // 版本号,例6.5.0
+        optional string ver = 3;
+        // 应用标识, iOS为iTunes Store ID, 安卓为package name.
+        optional string bundle = 4;
+    }
+    optional App app = 7;
+
+    // 用户信息
+    message User {
+        // Momo Exchange提供的用户唯一标识
+        optional string id = 1;
+        // 性别
+        enum Gender {
+            MALE = 1;
+            FEMALE = 2;
+            OTHER = 3;
+        }
+        optional Gender gender = 2;
+        // 年龄范围
+        optional int32 age_low = 3 [default = 0];
+        optional int32 age_high = 4 [default = 999];
+
+        // 来自不同数据源的用户数据
+        repeated Data data = 8;
+
+        // 用户兴趣关键词,逗号分隔
+        optional string keywords = 6;
+        // 用户的常住地址,非实时
+        optional Geo geo = 7;
+    }
+    optional User user = 8;
+
+    message Geo {
+        // 经纬度
+        optional double lat = 1;
+        optional double lon = 2;
+
+        // 省
+        optional string province = 4;
+        // 市
+        optional string city = 5;
+        // 区
+        optional string district = 6;
+        // 街道
+        optional string street = 7;
+    }
+}
+
+message Data {
+    // 数据提供商的ID
+    optional string id = 1;
+    // 数据提供商的名称
+    optional string name = 2;
+    // Segment数组
+    repeated Segment segment = 3;
+}
+
+// Key-value形式的Segment数据
+message Segment {
+    // Segment的ID
+    optional string id = 1;
+    // Segment的名称
+    optional string name = 2;
+    // Segment的值
+    optional string value = 3;
+}
+
+message BidResponse {
+    // BidRequest的ID
+    required string id = 1;
+    // 不参与竞价的原因. DSP不参与竞价时可以通过该字段告知原因
+    optional NoBidReason nbr = 2;
+    // 不参与竞价时,DSP提供的错误信息详细内容,供双方调试用
+    optional string em = 3;
+    // 来自不同Seat的竞价信息
+    repeated SeatBid seatbid = 4;
+    // DSP生成的bid id
+    optional string bidid = 5;
+
+    message SeatBid {
+        // 针对Imp的Bid信息
+        repeated Bid bid = 1;
+        // DSP的Seat标识
+        required string seat = 2;
+
+        // 广告实体
+        message Bid {
+            // DSP生成的ID
+            required string id = 1;
+            // BidRequest中的Impression ID
+            required string impid = 2;
+            // 出价,单位元,小数点后最多两位,多余位数截断
+            required double price = 3;
+
+            // Campaign ID
+            optional string cid = 4;
+            // 广告 ID
+            optional string adid = 5;
+            // 广告创意 ID
+            required string crid = 6;
+
+            // 广告的类目category
+            repeated string cat = 7;
+            // 广告主的Domain
+            repeated string adomain = 8;
+
+            // Win notice的URL,支持宏替换.DSP可不提供该字段,而是通过曝光监测链接宏替换获取win price,具体见宏替换说明
+            optional string nurl = 9;
+
+            // 应用下载广告的应用标识, iOS为iTunes Store ID, 安卓为package name.
+            optional string bundle = 10;
+
+            // 原生广告的素材信息
+            message NativeCreative {
+                // 素材对应的广告样式,必须是BidRequest中所给的样式之一
+                required NativeFormat native_format = 1;
+                // 广告标题,品牌名或应用名称
+                required string title = 2;
+                // 广告推广语
+                required string desc = 3;
+                // 广告Logo
+                required Image logo = 4;
+                // 广告详情图. 大图样式广告必须返回一个image对象, 三图版返回三个image对象,无图版不需要
+                repeated Image image = 5;
+
+                // 落地页广告的点击地址，支持中间/监测页跳转
+                optional Link landingpage_url = 6;
+
+                // 应用下载广告的下载地址.
+                // 安卓必须为.apk结尾地址,且必须同时提供app_intro_url.点击"安装"按钮请求app_download_url,点击其他区域请求app_intro_url
+                // iOS支持中间页跳转.点击广告所有区域均请求该地址.应用下载广告必填
+                optional Link app_download_url = 7;
+                // 安卓应用的介绍页面.点击安装按钮请求app_download_url,点击其他区域请求app_intro_url.安卓应用下载广告必填
+                optional Link app_intro_url = 8;
+                // 应用版本，只能由半角“.”符号与阿拉伯数字组成，例如12.9.3。应用下载广告必填
+                optional string app_ver = 9;
+                // 应用大小,单位MB,应用下载广告必填
+                optional double app_size = 10;
+                // 展示用的标签数组, 每个标签两个中文字符
+                repeated string display_labels = 11;
+                // 数据
+                repeated Segment ext_data = 12;
+
+
+                // 支持PNG/JPG格式的图片
+                message Image {
+                    // 图片的地址
+                    optional string url = 1;
+                    // 图片的宽高. 在保证宽高比例的情况下,可以大于竞价请求中指定的大小.
+                    optional int32 width = 2;
+                    optional int32 height = 3;
+
+                    // 图片的点击地址, 可选。若填写,点击图片跳转该地址; 不填写则跳转app_download_url/app_intro_url(应用下载广告)或者landingpage_url(落地页广告)
+                    optional Link link = 4;
+                }
+            }
+            optional NativeCreative native_creative = 11;
+
+            // 曝光监测地址,广告曝光时客户端会在后台ping该地址
+            repeated string imptrackers = 12;
+            // 点击监测地址, 点击时客户端会在后台ping该地址
+            repeated string clicktrackers = 13;
+
+            // 点击链接对象, 支持深度链接
+            message Link {
+                // 点击链接地址
+                // 如果填写了深度链接字段(deeplink_url), 客户端会首先尝试唤起深度链接指向的APP, 唤起失败则会调用该地址;
+                // 如果没有填写深度链接,则直接调用普通链接
+                required string url = 1;
+                // 深度链接
+                optional string deeplink_url = 2;
+            }
+        }
+    }
+
+    // 不参与竞价的原因
+    enum NoBidReason {
+        UNKNOWN_ERROR = 0;
+        TECHNICAL_ERROR = 1;
+        INVALID_REQUEST = 2;
+        KNOWN_WEB_SPIDER = 3;
+        SUSPECTED_NONHUMAN_TRAFFIC = 4;
+        CLOUD_DATACENTER_PROXYIP = 5;
+        UNSUPPORTED_DEVICE = 6;
+        BLOCKED_PUBLISHER = 7;
+        UNMATCHED_USER = 8;
+    }
+}
+
+// 可展示的原生广告样式,不同样式对应的素材规格见广告样式章节.
+enum NativeFormat {
+    // 大图: 一张520*260图片, 三图:三张250*250图片
+    FEED_LANDING_PAGE_LARGE_IMG = 1; // 附近动态大图版落地页广告
+    FEED_LANDING_PAGE_SMALL_IMG = 2; // 附近动态三图版落地页广告
+    NEARBY_LANDING_PAGE_NO_IMG = 3; // 无图版落地页广告
+
+    FEED_APP_IOS_LARGE_IMG = 4; // 附近动态大图版iOS应用下载广告
+    FEED_APP_IOS_SMALL_IMG = 5; // 附近动态三图版iOS应用下载广告
+    NEARBY_APP_IOS_NO_IMG = 6; // 附近人无图版iOS应用下载广告
+
+    FEED_APP_ANDROID_LARGE_IMG = 7; // 附近动态大图版安卓应用下载广告
+    FEED_APP_ANDROID_SMALL_IMG = 8; // 附近动态三图版安卓应用下载广告
+    NEARBY_APP_ANDROID_NO_IMG = 9; // 附近人无图版安卓应用下载广告
+}

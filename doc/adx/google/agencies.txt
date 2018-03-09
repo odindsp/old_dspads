@@ -1,0 +1,879 @@
+1 NONE
+121 101
+122 10Target
+123 2020 Media Ltd
+124 247 Real Media
+125 2Parale
+126 3-bit
+127 360 Partners
+128 360i
+129 3rd Place
+130 6S Marketing
+131 72andSunny
+132 77 Agency
+133 Abagada
+134 Aber Group
+135 Accado
+136 Acceleration Media
+137 Accuen
+138 Acqualung
+139 Acquirgy
+140 Acronym Media
+141 ActualSales
+142 Ad Agents
+143 Adam & Eve
+144 Adamicus
+145 Adapter Digital
+146 Add People
+147 Add2
+148 Adlabs
+149 Adlucent
+150 admatics.com
+151 Adpro
+152 AdsOnWall
+153 Adspire
+154 adtraffic
+155 Adventum
+156 ADVERT.ru
+157 Adviso
+158 AdWatch
+159 AdWork
+160 Aegis Media Group
+161 Africa
+162 AG2 Brasil
+163 Agavis
+164 Age
+165 Agencia Click
+166 Agency Republic
+167 Agenda 21 Digital
+168 Agent Interactive Ltd (IL)
+169 Ai Media Group
+170 AIM Internet Marketing
+171 AinoaHelsinki Oy
+172 AKQA
+173 Albion
+174 All Response Media
+175 All Things Web
+176 Almap BBDO
+177 Amnesia
+178 Amnet
+179 AMP Agency
+180 AMV BBDO (Abbott Mead Vickers)
+181 Analyzers
+182 Annalect Group
+183 Anomaly Communications
+184 Anvil Media
+185 Apollo Interactive
+186 AquaOnline
+187 Arc Worldwide
+188 Arena Media
+189 Arena Quantum
+190 Arnold Worldwide
+191 Artavia Advertising
+192 Ashmanov&partners
+193 Atcore
+194 ATOM
+195 Atom 42
+196 Attach Media
+197 Audience On Demand
+198 B2B Group
+199 Banner Corporation
+200 Baobaz
+201 Barracuda Digital
+202 Bassier, Bergmann & Kindler
+203 BBDO Worldwide
+204 BBH
+205 Beattie McGuinness Bungay (BMB)
+206 Big Spaceship
+207 Bigmouthmedia
+208 BitBang
+209 Blondinka
+210 Bloosem Media
+211 Blowfish Digital
+212 Blue Barracuda
+213 Blue Mango Concepts
+214 Blue Summit Media
+215 Blue2purple
+216 Bluesky Interactive
+217 BMF
+218 Bohemia
+219 Booming
+220 Booyah Networks
+221 Box
+222 BrandConnection
+223 Brass
+224 Bray Leino Yucca
+225 Burrell Communications
+226 Bytlink
+227 C20
+228 Cadastra
+229 Cadreon
+230 Cake
+231 Camelot Communications
+232 Carat
+233 Carat Manchester
+234 Cardinal Path (WebShare Design)
+235 Cardumen
+236 Carmelon
+237 Carmichael Lynch
+238 Casa
+239 Casanova Pendrill
+240 Catalyst Online
+241 Catch Media
+242 Chai communication
+243 ChannelAdvisor
+244 Cheil
+245 Cheil Worldwide
+246 Clarus Digital
+247 Clemenger Group
+248 Click Consult
+249 Clicks2Customers
+250 Clickthinking
+251 Clickthrough Marketing
+252 ClickValue
+253 Collective Marketing
+254 Columbus
+255 ComOn
+256 Conill Advertising
+257 Conrad Advertising
+258 Contactica
+259 Converge Direct
+260 Conversion Company
+261 Conversion Pros
+262 Core4 Slovakia
+263 Cossette
+264 Covario
+265 Creative & Interactive Group
+266 Crispin Porter + Bogusky
+267 Cross Media
+268 Crossmedia
+269 Cubo CC
+270 Cyber Agent
+271 Cyber Communications
+273 DAC Group
+274 Dagmar
+275 DARE Digital
+276 DASL
+277 DBIstanbul (Madwords)
+278 DDB Worldwide
+279 Deducta
+280 Demand Marketing
+283 Deutsch (includes iDeutsch)
+284 Didit
+285 Difusion y Audiencias
+286 Digilogue
+287 Digital Ocean
+288 Digitas
+289 Digitas Health
+290 Digithais
+291 Digitouch
+293 DigiTouch.it
+294 DLKW Lowe
+295 DM9DDB
+297 DMC Media
+298 Dobry Web
+299 Downstream Marketing
+300 DraftFCB
+301 droga5
+302 DTSI
+303 E-channel
+304 e-dialog KG
+305 e-Wolff Consulting
+306 Echo Marketing
+307 Efficient Frontier
+308 Effilab
+309 elements.at New Media Solutions
+310 Elisa Interactive
+311 Elite SEM
+312 Emforce
+313 EMitch
+314 Emnet
+315 Empower
+316 Energy Source
+317 Epiphany
+318 EProfessional
+319 Equaero
+320 Equator
+321 Equimedia
+322 eSearchVision
+323 Essence Digital
+324 Estime Oy
+325 Ethology
+326 Euro RSCG
+327 Exelution
+328 Exito GmbH & Co. KG
+329 Explido Webmarketing
+330 F.Biz
+331 F/Nazca
+332 Fallon Worldwide
+333 Fastbridge
+334 Fathom Online Marketing
+335 FCB-Ulka Advertising
+336 Fifty-five
+337 First Click Consulting
+338 First Rate
+339 Flock
+340 Flow Digital
+341 Focus Media
+342 Fortune Advertising
+343 Forward3D
+344 Foundation Works
+345 Frubis
+346 Full Speed
+347 Fullsix
+348 Function42
+349 Fusion Unlimited
+350 G2
+351 GaliciaBanner
+352 GFMO.OMD
+353 Gispy
+354 Global Hue
+355 Global Interactive
+356 Global Mind
+357 Globe One Digital
+358 Glue
+359 Go Interactive Marketing
+360 GOD
+361 Goldbach Audience
+362 Golley Slater (GCDM)
+363 Goodby, Silverstein & Partners
+364 Greenlight Digital
+366 Grey Global Group
+368 GRIP Limited
+369 GroupM
+370 Guava
+371 Gupta Media
+372 H1.cz
+373 Happi Mindshare
+374 Harvest Digital
+376 Havas International
+377 Havoc Digital
+378 HD Marketing
+379 Heye OMD 4CE
+380 High Position
+381 Hill, Holliday, Connors, Cosmopulos
+382 Horizon Media
+383 HS Ad
+384 Hurra Communications
+385 Hylink
+386 HyperActive
+387 HypermediaIsobar
+388 I Spy Search
+389 I-Cherry
+390 IClick Interactive
+391 ICom
+392 IContext
+393 ICrossing
+394 ID Digital
+395 ID Media
+396 IGlue Media
+397 IgnitionOne (incl. Search Ignite, Netmining)
+398 IIH ApS
+399 Ikon Communication
+401 ILatina
+402 ImagesUSA
+403 IMarketing
+404 IMJ Corporation
+405 Impaqt
+406 In Sight Communication
+407 INBORN
+408 Inceptor
+409 Incross
+410 Indexcol
+411 Ingenia
+412 Ingenuity Media
+413 Initiative Media (IUM)
+414 Innocean Worldwide
+415 Intarget
+416 Integer Group
+417 Interactive Avenues Marketing Services
+418 Intermundo Media
+419 Internet Advantage
+420 Internet-mit-IQ
+421 Intren Kft
+422 IProspect
+424 iREP
+425 Irismedia
+426 ISearch Media
+427 Isobar
+428 JabJab
+429 Jack Media London
+430 Jaron
+431 JellyFish
+432 John St.
+433 JPP Marketing
+434 JV WEB
+435 JWT
+436 JWT OgilvyAction
+437 K Logic
+438 Karmarama
+439 Keyade
+440 Keybroker
+441 Keyword First
+442 Kinase Search
+443 Kirshenbaum Bond
+444 KliKKi
+445 Klikkmania
+446 Kmf werbung
+447 Kobalt
+448 Komdat
+449 KorAnga
+450 KR Media
+451 Kraft One
+452 Krow
+453 KSL Media
+454 Kubix
+455 Kukoo
+456 Labelium
+457 Lake Star Media
+458 LatinWorks
+459 Latitude Group
+460 Lattitud
+461 LBi
+462 LeadQual
+463 Lean Mean Fighting Machine
+464 Leapfrog Online
+465 Leo Burnett
+466 LewLara/TBWA
+467 Lighthouse Digital
+468 Lighthouse Internet Media
+469 Linkmakers
+470 LinkShare
+471 Live Revolution
+472 Location3 Media
+473 LSF Network
+474 Lunchbox
+475 M,P, newmedia
+476 M&C Saatchi
+477 M2 Universal
+478 M2M
+479 M4C
+480 MacLaren McCann
+481 Madhouse
+483 Madison Solutions
+484 Madison World
+485 Magna Global
+486 Make it rain
+487 Make Marketing
+488 Manning Gottlieb OMD
+489 Marin Software
+490 Marketel
+491 Mars
+492 Mass Colombia
+493 Maxlead
+494 Maxus
+495 Mayo and Marsh
+496 MBThree
+497 MC2
+500 McCann Worldgroup
+501 McGarry Bowen
+502 MEA Digital
+503 MEC (Mediaedge:cia)
+505 Media Contacts
+507 Media Direction OMD
+508 Media Experts
+509 Media Interactive Group
+510 Media Italia
+511 Media Kitchen
+512 Media Planning Group (MPG)
+513 Media Storm
+514 MEDIA TEAM OMD
+515 MediaAde
+516 Mediabroker
+517 MediaCom
+519 Mediascale
+520 Mediaschneider
+521 Mediative (Enquiro)
+522 Mediatoimisto Voitto
+523 Mediavest Worldwide
+524 Mediaxis-MPG
+525 Medix
+526 Mentalidad Web Chile
+527 Mercent
+528 Metapeople
+529 Mezzo Media
+530 MGCom
+531 MiG (Media Innovation Group)
+532 Mindshare
+533 Mindworks
+534 Mobile Dreams factory
+535 MobiMedia
+536 MoJo Group
+537 Money Market
+538 Morpheus Media
+539 Mother
+540 Moxie Interactive
+541 MSix
+542 Mullen
+543 MW Office
+544 My Media
+545 NAS Media
+546 NBS
+547 Neo@Ogilvy
+549 Neogama BBH
+550 Net Media Planet Limited
+551 Netbooster
+552 NETFORMIC
+553 NetIdea Webranking
+554 Netsociety
+555 Netthink Isobar
+556 Netzeffekt
+557 New identity
+558 New Media Agency
+559 NewBriefing
+560 Newcast
+561 NextIdea France
+562 Nikko
+563 NitraLabs
+564 Nivoria Solutions
+565 Nonstop Consulting
+566 Novatika
+567 Ogilvy & Mather
+568 OgilvyOne
+569 OMD
+570 OMD International
+573 Omnicom Media Group (OMG)
+574 Omnicom Trading Desk
+575 One Digital
+576 Onetomarket
+577 Oogst
+578 Opt
+579 Optimedia
+580 Organic
+581 Oron Jaffe
+582 Outrider
+583 PanMedia Western
+584 Paprika Business Software
+585 Pavilion Communication Services
+586 Performance Media
+587 Performics
+588 Periscopix
+589 PHD
+594 Pilot Media
+596 Ping
+597 PixelClip
+598 Plan.Net
+603 Plattform
+604 PM Digital
+605 Podium
+606 Positive Digital
+607 PPC Associates
+608 Premier Placement
+609 Prime Visibility
+610 Project House
+611 Promodo
+612 Proximity BBDO
+613 Publicis
+616 PureAgency
+617 Purple Cow
+618 Quasar Media JV
+619 Quinstreet
+620 Quirk
+621 Quiroga
+622 Quisma
+623 Quru
+624 R/GA
+625 Radeus Advertising
+626 RankingCHECK
+627 Rapier
+628 Rapp Collins Worldwide
+629 Rascal
+630 Razorfish
+631 RBScorp
+632 Re-Mind
+633 Realweb
+634 Red Media
+635 Red Ventures
+636 Relevant Traffic
+637 Reprise Media
+638 Republica
+639 Resolution Media
+640 Resoneo
+641 Resultrix Media
+642 Rimm-Kaufman Group
+643 Rise Interactive
+644 RKCR/Y&R
+645 Rocket Clicks
+646 ROI Revolution
+647 Rosetta
+648 RPM Connect
+649 Rubin Postaer And Associates
+650 Saatchi & Saatchi
+652 SABest
+653 Sales & More
+654 Sapient Corporation
+655 Sayu
+656 Scream Mediabyrå
+657 Search Code
+658 Search Engine People
+659 Search Laboratory
+660 Search Marketing
+661 Search Performance / AWE
+662 Search Star
+663 SearchResult
+664 SearchRev
+665 SEM Internet Reklam Bilisim Teknolojileri
+666 Sembox
+667 Semetis
+668 Seo-Studio
+669 SeoLab
+670 SEOptimise
+671 Seperia
+672 Septeni
+673 SF eBusiness
+674 Sid Lee
+675 Simple Agency
+676 Sitewire Marketspace Solutions
+677 SK Marketing & Company
+678 Smart Interactive
+679 Smarter Ecommerce
+680 SMG Search
+681 Soap Creative
+682 Solutions Digitas
+683 Space
+684 Spacedealer
+685 Spark Communications
+686 Starcom Mediavest Group (SMV)
+689 Starlink Worldwide
+690 Starmedia Co.
+691 Steak
+692 Stickyeyes (Optimum 4)
+693 StormMC
+694 Summit Media
+695 Sumo - sumo.de
+696 Surefire Search
+697 Surikate
+698 Synlighet
+699 T2O Admedia Services
+700 Tapestry
+701 Targetcast
+702 Taxi
+703 TBWA Worldwide Group
+705 Team Detroit
+706 The 7 Stars
+707 The Barbarian Group
+708 The Brand Agency
+709 The Media Image
+710 The Media Store
+711 The Monkeys
+712 The New Media Edge
+713 The Rebellion
+714 The Red Brick Road
+715 The Search Agency
+716 These Days
+717 Tierney Communications
+718 TMF
+719 Tomatoes
+720 Tracy Locke
+721 Traffic Brand
+722 Traffic Builders
+723 Traffic4u
+724 TransCosmos
+725 Triad Digital Media
+726 Tribal DDB
+727 Tribal Internet Marketing
+728 Trigger
+729 True Action
+730 TSW
+731 Tulip Digital
+732 Tulos Helsinki Oy
+733 UAMaster
+734 Ultimedia E-solutions
+735 Union
+736 Unique Digital
+737 Unit9
+738 United People
+739 Universal McCann
+740 Universal Media
+741 UniWorld Group
+742 Upshot
+743 Vast Visibility
+744 VCCP Digital
+745 View
+746 Virta MediaCommunity
+747 VivaKi
+748 Vixia
+749 Vizeum
+750 VML
+751 Voltage Media
+752 Walker Media
+753 WCRS
+754 Weapon7
+755 Webconomy
+756 WebMetro
+757 Webrepublic
+758 Whalder Media Group AB
+759 Wieden & Kennedy
+760 Wink
+761 Wisely
+762 Work Club
+763 Wpromote
+764 Wunderman
+765 WWAV Rapp
+766 Wwwins Isobar Consulting
+767 Xaxis
+768 Xenion Isobar
+769 Ymedia
+770 Yonego
+771 Yoox Ag
+772 Young & Rubicam Brands
+773 Yourposition
+774 Zed Digital
+775 Zenith Media
+776 ZenithOptimedia
+777 ZenithOptimedia International
+779 Zer
+780 Zeta Interactive
+781 Zubi Advertising Services
+1000788 i-360
+1000789 Bully Pulpit Interactive
+1000790 Southwest Media Group
+1001091 Xpeto
+1001092 Gotham Direct
+1001093 ProgrammAddict
+1001394 Assembly Media
+1001395 Merkle Inc
+1001396 The Online Company
+1001697 Push Digital
+1001698 DQ&A
+1001699 Magnet Intell
+1001701 Media Club
+1002000 TerserTude
+1002001 Dentsu
+1002002 Tenthavenue
+1002005 Ptarmigan
+1002303 IM Lounge
+1002304 Targetoo
+1002305 Media Response
+1002606 New Blue
+1002607 Personagraph
+1002608 Mighty Hive
+1002611 Media Two Interactive
+1002909 ZIGT Media
+1002910 RTB.cat
+1002911 Good Apple Digital
+1002913 The Exchange Lab
+1002914 Sojern
+1002916 Specific Media
+1002919 Connexity
+1002922 Captify
+1003212 Media iQ
+1003213 Mogo
+1003214 Varick Media
+1003215 Crimtan
+1003216 Adpepper
+1003218 Core Audience
+1003221 BPN
+1003515 The Economist
+1003516 Accordant Media
+1003517 Bloom
+1003519 PMG
+1003520 Nurun
+1003523 Sales Frontier TW
+1003818 DP CF
+1003819 Radiance Media
+1003820 South China Morning Post
+1003821 District M
+1003822 Amobee
+1003825 MediaScience
+1004121 Five Stones
+1004122 Collective Media
+1004123 BMind
+1004124 Redux Media
+1004125 Goldbach Interactive
+1004126 Cendyn
+1004424 Yoptima
+1004425 ClickDistrict
+1004426 AdXperience
+1004427 Ematters
+1004428 Duproprio
+1004431 Radio Canada
+1004434 OPM Pros
+1004437 CyberPublicity
+1004440 Bell Media
+1004727 Affiperf
+1004728 YMarketing
+1004729 Pervorm
+1004730 Publicitas
+1004732 Nextail
+1004733 Turbo Adv
+1005030 Revolution Messaging LLC
+1005031 Magnetic
+1005032 Infectious Media
+1005333 Goodway Group
+1005334 A.H. Belo
+1005335 Undertone
+1005337 Jumpstart Automotive Media
+1005338 PG Publishing Co. Inc
+1005340 Dynamo
+1005341 Health Grades, Inc.
+1005344 Manta Media
+1005347 Croud Inc. Ltd
+1005636 eRate IL
+1005637 Onebird
+1005638 National Republican Senatorial  Committee
+1005639 ConvertMedia
+1005640 Dolcezza Holdings
+1005642 Everyday Health Media
+1005645 Real ROI
+1005939 KeyTeq Norway
+1005940 ProgrammAds
+1005941 Cymmetrics
+1005942 VideoAmp
+1005945 Qualia Media
+1005948 Vice Media Inc.
+1005951 Programmatic Mechanics
+1005954 Harmelin Media
+1005957 Pervorm - ING
+1005960 New Fire Media
+1006242 Star Tribune Media Company
+1006243 Zimmerman
+1006244 DB Medialab Norway
+1006246 Thrive Digital
+1006545 Juice Mobile
+1006546 Adtegrity
+1006547 OMG Norway
+1006848 ADZ Central
+1006849 Serranetga AG
+1006850 Leadrs
+1007151 Multiply
+1007152 Videobeat Networks
+1007153 Suisseo
+1007454 Improve Digital
+1007455 De Media Maatschap
+1007456 Brandbuero Media
+1007757 De Nieuwe Zaak
+1007758 Peloton Media
+1007759 Adcleek
+1007762 AdDialeto
+1008060 TruEffect
+1008061 Jom Com
+1008062 Precis Digital
+1008063 adlicious
+1008066 Revolution Media Group
+1008069 Meme Global
+1008363 Flipp
+1008364 Envoker
+1008365 Value Media
+1008666 VE
+1008667 OTM
+1008668 Intelish
+1008669 Spicy Internet
+1008969 MediaNation
+1008970 Intimate Merger
+1008971 Crucial Interactive
+1008974 TMP Worldwide
+1009272 MediaCom Canada
+1009273 NRI Netcom
+1009274 Proper Digital Marketing Agency
+1009275 Neolab Bergen
+1009276 Yoyo
+1009277 ManageEngine
+1009280 Tug Agency
+1009575 ClickForce
+1009576 SOK Media
+1009577 Noise Digital
+1009579 Biga Bid Media
+1009878 S4M
+1009879 Optdcom Teknoloji
+1010181 Adways
+1010182 Union Media IL
+1010183 Mediafactor
+1010484 Brainlabs Digitial
+1010485 Arkitekt Media
+1010486 AdAsia
+1010787 Vicomi
+1010788 Alike Audience
+1010789 Addsuite
+1011090 Adswerve - Harris Media
+1011091 BannerConnect
+1011092 Expand Online
+1011393 World Remit
+1011394 MBM
+1011395 Aviso - Kilimanjaro Media
+1011696 eTargeting
+1011697 Greenhouse Group
+1011698 Odin/Compass Point
+1011699 Sokrati
+1011700 TUI France
+1011701 Traffic Isobar
+1011999 AdCamp
+1012000 Strategic Partners and Media
+1012001 Yaznayu RU
+1012002 HubRus
+1012004 Leadaki AR
+1012007 iMarker
+1012010 ViHub
+1012302 Arrow Media
+1012303 Bluerank
+1012304 Tactio
+1012605 Datacentric
+1012606 Visa c/o Starcom
+1012607 Media Instinct
+1012608 Netpeak
+1012609 TeslaGear
+1012612 Clear Data
+1012908 DigitasLBi Germany c/o Congstar
+1012909 Auditorius
+1012910 Advance Mediabrands
+1012913 DigiDesk Media
+1013211 Acquamedia HK
+1013212 OHM Solutions
+1013213 UrAd TW
+1013215 DA Skipper
+1013218 Third Stone
+1013514 Dialekta
+1013515 Programmatic Media RU
+1013516 Cue Digital Media
+1013817 SCL USA INC
+1013818 Pink Media
+1013819 BBDO RU
+1013822 YOC
+1014120 Mirum
+1014121 Audience Store
+1014122 Wavenet SH
+1014423 Programmatic Republic
+1014424 Media Gate RU
+1014425 Logicserve India
+1014726 Weborama
+1014727 Goodstuff Communications LLP
+1014728 EDMC
+1014729 AdSwerve - Cavalry
+1014731 remind.phd
+1015029 timeonegroup
+1015030 National Media
+1015031 Jussi
+1015034 Egmont Publishing AS
+1015037 Sempro AS
+1015332 Criterion Global
+1015333 Campbell Ewald
+1015334 Sprout
+1015635 Audience Partners
+1015636 Nectarin RU
+1015637 ARC Science
+1015639 AdSwerve - Topfloor Digital Media
+1015642 ETEAMSYS
+1015645 Audience2Media
+1015648 Tapped Networks
+1015938 Konversion
+1015939 Blinks
+1015940 GlobalWide Media
+1016241 They.pl
+1016242 Adara Media
+1016243 Bonnier Publications International
+1016244 Adswerve - New Relic2 - DBM
+1016544 Xelsion
+1016545 Media stars
+1016546 3xchange
+1016847 AdYouLike
+1016849 Coegi, LLC
+1017150 K2 Search PL
+1017151 Affiperf Peru
+1017152 Serino Coyne
+1017155 vidazoo
+1017453 Elogia Media
+1017455 iCherry
+1017758 EAGLEi
+1018061 Aviso - ProTableau Inc
+1018064 W3haus
+1018364 Publicis Salles Chemistri

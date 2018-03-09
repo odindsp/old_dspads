@@ -1,0 +1,73 @@
+syntax = "proto2";
+package zadx;
+option java_outer_classname = "ZadxExt";
+
+import "openrtb.proto";
+
+extend com.google.openrtb.BidRequest {
+    // 当前协议版本号，目前为1
+    optional int32 version = 200;
+
+    // true标记本次请求是测试请求。当为测试请求时，DSP需要返回一个带有广告的应答，
+    // 该应答广告不会被展现给用户，也不会对该次广告展现计费。适用于联调测试。
+    optional bool is_test = 201;
+
+    // true标记是心跳检测请求。当为ping请求时，
+    // DSP需要返回一个没有广告（即不设置BidResponse.ads字段）的应答
+    optional bool is_ping = 202;
+}
+
+
+extend com.google.openrtb.BidRequest.Geo {
+    // 经纬度精度
+    // 请参见[Decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees)
+    optional int32 accu = 200;
+
+    // 街道名称
+    optional string street = 201;
+}
+
+
+extend com.google.openrtb.BidRequest.Imp {
+    // 是否为开屏广告
+    optional bool is_splash_screen = 200;
+}
+
+extend com.google.openrtb.BidRequest.Device {
+    // 国家运营商编号
+    optional string plmn = 200;
+
+    // imei码
+    optional string imei = 201;
+
+    // mac地址
+    optional string mac = 202;
+
+    // Android ID
+    optional string android_id = 203;
+
+    // AD ID
+    optional string adid = 204;
+}
+
+extend com.google.openrtb.BidResponse.SeatBid.Bid {
+  // 曝光追踪地址, 允许使用宏
+  repeated string imptrackers = 200;
+
+  // 点击追踪地址, 允许使用宏
+  repeated string clktrackers = 201;
+    
+  // 广告点击跳转地址，允许使用宏
+  optional string clkurl = 202;
+
+  // html广告代码，允许使用宏
+  optional string html_snippet = 203;
+
+  // 曝光追踪地址, 允许使用宏
+  optional string app_ver = 204;
+}
+
+
+
+
+

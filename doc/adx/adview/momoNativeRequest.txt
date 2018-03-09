@@ -1,0 +1,160 @@
+{
+  "app": {
+    "ext": {
+      "appsecret": "",
+      "appkey": ""
+    },
+    "ver": "6.5.2",
+    "cat": [
+      10502
+    ],
+    "name": "MOMO",
+    "paid": 0,
+    "id": "f56a571271e190053238d72c77102da1",
+    "bundle": ""
+  },
+  "at": 0,
+  "id": "20160408-165435_bidreq_165-3960-NwVU-1886",
+  "imp": [
+    {
+      "native": {
+        "request": {
+          "layout": 6,
+          "assets": [
+            {
+              "img": {
+                "w": 150,
+                "h": 150,
+                "hmin": 0,
+                "wmin": 0,
+                "type": 1,
+                "mimes": [
+                  "image\/png"
+                ]
+              },
+              "id": 1,
+              "required": 1
+            },
+            {
+              "id": 2,
+              "title": {
+                "len": 10
+              },
+              "required": 1
+            },
+            {
+              "data": {
+                "len": 20,
+                "type": 2
+              },
+              "id": 3,
+              "required": 1
+            }
+          ],
+          "adunit": 4
+        },
+        "ver": "1.0"
+      },
+      "tagid": "7nb8jn1rc2t2",
+      "bidfloor": 60000,
+      "bidfloorcur": "RMB",
+      "id": "20160408-165435_reqimp_165-3960-1JmF-1885",
+      "instl": 6
+    }
+  ],
+  "device": {
+    "orientation": 0,
+    "os": "iOS",
+    "sw": 640,
+    "ip": "115.213.86.30",
+    "js": 1,
+    "language": "zh",
+    "ua": "Mozilla\/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit\/537.51.2 (KHTML, like Gecko) Mobile\/11D167",
+    "devicetype": 1,
+    "geo": {
+      "lon": 121.37971234972,
+      "type": 1,
+      "lat": 30.020019498737
+    },
+    "carrier": "",
+    "osv": "8.4",
+    "sh": 1136,
+    "model": "iphone",
+    "connectiontype": 2,
+    "make": "Apple",
+    "dpidsha1": "fad42f1743e02bfa55de9ed717d36afa09a4b866"
+  },
+  "user": {
+    
+  }
+}
+
+
+
+{
+  "bidid": "4410_1460105724180_42492",
+  "cur": "RMB",
+  "id": "20160408-165435_bidreq_165-3960-NwVU-1886",
+  "seatbid": [
+    {
+      "bid": [
+        {
+          "adct": 0,
+          "adh": 150,
+          "adid": "4410",
+          "admt": 8,
+          "adtm": 0,
+          "adurl": "http://...?rqid=20160408-165435_bidreq_165-3960-NwVU-1886&extdata=fGlzUE1QPTB8Yz0yOTk0NnxndWlkPWZhZDQyZjE3NDNlMDJiZmE1NWRlOWVkNzE3ZDM2YWZhMDlhNGI4NjZ8QXByPTQ0MTB8QXNjPTQyNDkyfEFzcD1mNTZhNTcxMjcxZTE5MDA1MzIzOGQ3MmM3NzEwMmRhMV8xNTBfMTUwfGhzY29kZT0xMDUxMDk2OTUwfERvbWFpbj13d3cuYWR2aWV3LmNufElwPTExNS4yMTMuODYuMzB8Q2hhbm5lbElkPTEwNDA=&isJamp=1&JampUrl=http%3A%2F%2Fm.duobao999.com%2F%3Fchannel_id%3D59a9%26zcid%3D01D20B9931C38B142D06B8825CEB082A73B27E71ABB116BF",
+          "adw": 150,
+          "cid": "29946",
+          "curl": [
+            
+          ],
+          "impid": "20160408-165435_reqimp_165-3960-1JmF-1885",
+          "native": {
+            "assets": [
+              {
+                "id": 1,
+                "img": {
+                  "h": 150,
+                  "url": "http://.../20160408/33d55be748a35b2b60920a794285948d.jpg",
+                  "w": 150
+                }
+              },
+              {
+                "id": 2,
+                "title": {
+                  "text": "1元抢MacBook！现货保证 ！"
+                }
+              },
+              {
+                "data": {
+                  "label": "desc",
+                  "value": "1元抢MacBook！现货保证！"
+                },
+                "id": 3
+              }
+            ],
+            "ver": "1"
+          },
+          "nurl": {
+            "0": [
+              "http://...?rqid=20160408-165435_bidreq_165-3960-NwVU-1886&extdata=fGlzUE1QPTB8Yz0yOTk0NnxndWlkPWZhZDQyZjE3NDNlMDJiZmE1NWRlOWVkNzE3ZDM2YWZhMDlhNGI4NjZ8QXByPTQ0MTB8QXNjPTQyNDkyfEFzcD1mNTZhNTcxMjcxZTE5MDA1MzIzOGQ3MmM3NzEwMmRhMV8xNTBfMTUwfGhzY29kZT0xMDUxMDk2OTUwfERvbWFpbj13d3cuYWR2aWV3LmNufElwPTExNS4yMTMuODYuMzB8Q2hhbm5lbElkPTEwNDA=&rqp=%%WIN_PRICE%%"
+            ]
+          },
+          "paymode": 1,
+          "price": 68500,
+          "wurl": "http://...?rqid=20160408-165435_bidreq_165-3960-NwVU-1886&extdata=fGlzUE1QPTB8Yz0yOTk0NnxndWlkPWZhZDQyZjE3NDNlMDJiZmE1NWRlOWVkNzE3ZDM2YWZhMDlhNGI4NjZ8QXByPTQ0MTB8QXNjPTQyNDkyfEFzcD1mNTZhNTcxMjcxZTE5MDA1MzIzOGQ3MmM3NzEwMmRhMV8xNTBfMTUwfGhzY29kZT0xMDUxMDk2OTUwfERvbWFpbj13d3cuYWR2aWV3LmNufElwPTExNS4yMTMuODYuMzB8Q2hhbm5lbElkPTEwNDA=&rqp=%%WIN_PRICE%%"
+        }
+      ],
+      "seat": "4410_1460105724180_42492_29946"
+    }
+  ]
+}
+
+
+
+
+
+
+

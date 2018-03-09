@@ -1,0 +1,37 @@
+1 CreativeType: Text
+2 CreativeType: Image/Rich Media
+3 VideoType: Adobe Flash FLV
+4 VideoType: RealPlayer
+5 VideoType: QuickTime
+6 VideoType: Windows Media
+7 Tagging: IsTagged
+8 CookieTargeting: IsCookieTargeted
+9 UserInterestTargeting: IsUserInterestTargeted
+13 ExpandingDirection: ExpandingUp
+14 ExpandingDirection: ExpandingDown
+15 ExpandingDirection: ExpandingLeft
+16 ExpandingDirection: ExpandingRight
+17 ExpandingDirection: ExpandingUpLeft
+18 ExpandingDirection: ExpandingUpRight
+19 ExpandingDirection: ExpandingDownLeft
+20 ExpandingDirection: ExpandingDownRight
+21 CreativeType: Html
+22 CreativeType: VastVideo
+25 ExpandingDirection: ExpandingUpOrDown
+26 ExpandingDirection: ExpandingLeftOrRight
+27 ExpandingDirection: ExpandingAnyDiagonal
+28 ExpandingAction: RolloverToExpand
+30 InstreamVastVideoType: Vpaid Flash
+32 MraidType: Mraid 1.0
+33 RichMediaCapabilityType: RichMediaCapabilityHTML4
+34 RichMediaCapabilityType: RichMediaCapabilityFlash
+39 RichMediaCapabilityType: RichMediaCapabilityHTML5
+40 RichMediaCapabilityType: RichMediaCapabilityHTML5BasicSVG
+41 RichMediaCapabilityType: RichMediaCapabilityHTML5SVGFilters
+42 RichMediaCapabilityType: RichMediaCapabilityHTML5SVGFonts
+43 RichMediaCapabilityType: RichMediaCapabilityLargeExpandable
+44 InstreamVastVideoType: Skippable Instream Video
+47 RichMediaCapabilityType: RichMediaCapabilitySSL
+48 RichMediaCapabilityType: RichMediaCapabilityNonSSL
+50 RichMediaCapabilityType: RichMediaCapabilityNonFlash
+51 RichMediaCapabilityType: RichMediaCapabilityInterstitial

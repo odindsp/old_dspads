@@ -1,0 +1,66 @@
+﻿生成启动时间为 2015/12/7 18:56:10。
+     1>项目“E:\hosts\redis-2.8\src\Win32_Interop\Win32_Interop.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>CustomBuild:
+         Performing Custom Build Tools
+         子目录或文件 resources 已经存在。
+         MC: Compiling EventLog.mc
+         Microsoft (R) Windows (R) Resource Compiler Version 6.3.9600.17200
+         
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+         Microsoft (R) Incremental Linker Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+     1>LINK : warning LNK4068: 未指定 /MACHINE；默认设置为 X86
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"E:\hosts\redis-2.8\src\Win32_Interop\..\..\deps\lua\src" /ZI /nologo /W3 /WX- /Od /Oy- /D _OFF_T_DEFINED /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /D USE_DL_PREFIX /D LACKS_STDLIB_H /D USE_DLMALLOC /D _CRT_SECURE_NO_WARNINGS /D WIN32_IOCP /D PSAPI_VERSION=1 /D _WIN32_WINNT=0x0501 /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt win32fixes.c Win32_ANSI.c Win32_dlmalloc.c Win32_QFork_impl.c Win32_RedisLog.c Win32_ThreadControl.c win32_util.c win32_wsiocp.c
+         win32_wsiocp.c
+         win32_util.c
+         Win32_ThreadControl.c
+         Win32_RedisLog.c
+         Win32_QFork_impl.c
+         Win32_dlmalloc.c
+         Win32_ANSI.c
+         win32fixes.c
+         正在生成代码...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"E:\hosts\redis-2.8\src\Win32_Interop\..\..\deps\lua\src" /ZI /nologo /W3 /WX- /Od /Oy- /D _OFF_T_DEFINED /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /D USE_DL_PREFIX /D LACKS_STDLIB_H /D USE_DLMALLOC /D _CRT_SECURE_NO_WARNINGS /D WIN32_IOCP /D PSAPI_VERSION=1 /D _WIN32_WINNT=0x0501 /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Win32_CommandLine.cpp Win32_Common.cpp Win32_EventLog.cpp Win32_FDAPI.cpp Win32_fdapi_crt.cpp Win32_QFork.cpp win32_rfdmap.cpp Win32_service.cpp Win32_StackTrace.cpp Win32_variadicFunctor.cpp
+         Win32_variadicFunctor.cpp
+         Win32_StackTrace.cpp
+         Win32_service.cpp
+         win32_rfdmap.cpp
+         Win32_QFork.cpp
+     1>e:\hosts\redis-2.8\src\win32_interop\win32_qfork.cpp(167): warning C4244: “初始化”: 从“double”转换到“size_t”，可能丢失数据
+         Win32_fdapi_crt.cpp
+         Win32_FDAPI.cpp
+         Win32_EventLog.cpp
+         Win32_Common.cpp
+         Win32_CommandLine.cpp
+     1>e:\hosts\redis-2.8\src\win32_interop\win32_commandline.cpp(175): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\hosts\redis-2.8\src\win32_interop\win32_commandline.cpp(179): warning C4018: “>”: 有符号/无符号不匹配
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"E:\hosts\redis-2.8\msvs\Debug\Win32_Interop.lib" DbgHelp.lib /NOLOGO /NODEFAULTLIB:MSVCRT Debug\win32fixes.obj
+         Debug\Win32_ANSI.obj
+         Debug\Win32_CommandLine.obj
+         Debug\Win32_Common.obj
+         Debug\Win32_dlmalloc.obj
+         Debug\Win32_EventLog.obj
+         Debug\Win32_FDAPI.obj
+         Debug\Win32_fdapi_crt.obj
+         Debug\Win32_QFork.obj
+         Debug\Win32_QFork_impl.obj
+         Debug\Win32_RedisLog.obj
+         Debug\win32_rfdmap.obj
+         Debug\Win32_service.obj
+         Debug\Win32_StackTrace.obj
+         Debug\Win32_ThreadControl.obj
+         Debug\win32_util.obj
+         Debug\Win32_variadicFunctor.obj
+         Debug\win32_wsiocp.obj
+         Win32_Interop.vcxproj -> E:\hosts\redis-2.8\msvs\Debug\Win32_Interop.lib
+     1>已完成生成项目“E:\hosts\redis-2.8\src\Win32_Interop\Win32_Interop.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:10.65
